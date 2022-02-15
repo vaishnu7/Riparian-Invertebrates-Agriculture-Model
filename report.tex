@@ -1,0 +1,147 @@
+% !!!IMPORTANT NOTE: Please read carefully all information including those preceded by % sign
+%Before you compile the tex file please download the class file AIMS.cls from the following URL link to the
+%local folder where your tex file resides. http://aimsciences.org/journals/tex-sample/AIMS.cls.
+\documentclass{aims}
+\usepackage{amsmath}
+  \usepackage{paralist}
+  \usepackage{graphics} %% add this and next lines if pictures should be in esp format
+  \usepackage{epsfig} %For pictures: screened artwork should be set up with an 85 or 100 line screen
+\usepackage{graphicx}  \usepackage{epstopdf}%This is to transfer .eps figure to .pdf figure; please compile your paper using PDFLeTex or PDFTeXify.
+ \usepackage[colorlinks=true]{hyperref}
+   % Warning: when you first run your tex file, some errors might occur,
+   % please just press enter key to end the compilation process, then it will be fine if you run your tex file again.
+   % Note that it is highly recommended by AIMS to use this package.
+\hypersetup{urlcolor=blue, citecolor=red}
+%\usepackage{hyperref}
+%%ADDED FROM MY SIDE
+\usepackage{multirow}
+\usepackage{tabulary}
+\usepackage{pdflscape}
+\usepackage{caption}
+\usepackage{subcaption}
+\captionsetup[subfigure]{labelfont=rm}
+
+  \textheight=8.2 true in
+   \textwidth=5.0 true in
+    \topmargin 30pt
+     \setcounter{page}{1}
+
+% The next 5 line will be entered by an editorial staff.
+\def\currentvolume{X}
+ \def\currentissue{X}
+  \def\currentyear{20XX}
+   \def\currentmonth{XX}
+    \def\ppages{X--XX}
+     \def\DOI{10.3934/xx.xxxxxxx}
+
+ % Please minimize the usage of "newtheorem", "newcommand", and use
+ % equation numbers only situation when they provide essential convenience
+ % Try to avoid defining your own macros
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}
+\newtheorem*{main}{Main Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem*{problem}{Problem}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}{Remark}
+\newtheorem*{notation}{Notation}
+\newcommand{\ep}{\varepsilon}
+\newcommand{\eps}[1]{{#1}_{\varepsilon}}
+%%ADDED FROM MY SIDE
+\newcolumntype{L}{>{\centering\arraybackslash}m{2.8 cm}}
+
+%% Place the running title of the paper with 40 letters or less in []
+ %% and the full title of the paper in { }.
+\title[RIPARIAN-AGRICULTURE-INVERTEBRATES INTERACTIVE DYNAMICS] %Use the shortened version of the full title
+      {Riparian Invertebrates and Agriculture}
+
+% Place all authors' names in [ ] shown as running head, Leave { } empty
+% Please use `and' to connect the last two names if applicable
+% Use FirstNameInitial.  MiddleNameInitial. LastName, or only last names of authors if there are too many authors
+\author{
+Abhinav Tandon
+\and
+Vaishnudebi Dutta{}}
+
+% It is required to enter 2020 MSC.
+\subjclass{Primary: 34C60, 92D45; Secondary: 34C23, 34C25, 34D20}
+% Please provide minimum  5 keywords.
+ \keywords{nonlinear model, differential equations, equilibrium states, stability, bifurcation, periodic solutions.}
+
+% Email address of each of all authors is required.
+% You may list email addresses of all other authors, separately.
+ \email{abhinav.abhi02@gmail.com}
+% \email{email2@aimSciences.org}
+% \email{email3@ece.pdx.edu}
+
+% Put your short thanks below. For long thanks/acknowlegements,
+%please go to the last acknowlegments section.
+%\thanks{The first author is supported by NSF grant xx-xxxx}
+
+% Add corresponding author at the footnote of the first page if it is necessary.
+% Plase add $^*$ adjacent to the corresponding author's name on the first page.
+% The example shown in this template is if the first author is the corresponding author.
+\thanks{$^*$ Corresponding author: Abhinav Tandon}
+
+\begin{document}
+\maketitle
+
+% Enter the first author's name and address:
+\centerline{\scshape Abhinav Tandon $^*$}
+\medskip
+{\footnotesize
+% please put the address of the first author
+ \centerline{Department of Mathematics}
+   \centerline{Birla Institute of Technology (BIT), Mesra}
+   \centerline{Ranchi - 835215, Jharkhand, INDIA}
+} % Do not forget to end the {\footnotesize by the sign }
+
+\medskip
+
+\centerline{\scshape Vaishnudebi Dutta}
+\medskip
+{\footnotesize
+% please put the address of the second  and third author
+ \centerline{Department of Mathematics}
+   \centerline{Birla Institute of Technology (BIT), Mesra}
+   \centerline{Ranchi - 835215, Jharkhand, INDIA}
+}
+
+\bigskip
+
+% The name of the associate editor will be entered by an editorial staff
+% "Communicated by the associate editor name" is not needed for special issue.
+ \centerline{(Communicated by the associate editor name)}
+
+
+%The abstract of your paper
+\begin{abstract}
+To be updated later
+\end{abstract}
+%The title of your section 1
+\section{Introduction}
+Riparian environments include river banks, floodplains, and wetlands, among other environmental types. In other words, this ecosystem supports ecologically unique and diverse groups because it represents wetter, colder, and diversified habitats than nearby highland areas as studied by Pettit et al. \cite{pettit2007fire}.These biodiverse transitional zones provide as a link between marine and terrestrial ecosystems \cite{popescu2021riparian}. Emergent aquatic insects and riparian invertebrate consumers, including as spiders and beetles, play an important role in connecting stream and terrestrial trophic networks, contributing to diodiversity at the local and watershed levels. \\
+
+%%%FIGURES
+%%%REFERENCES
+\begin{thebibliography}{99}
+\bibitem{pettit2007fire}
+  \newblock Pettit, Neil E and Naiman, Robert J,
+  \newblock Fire in the riparian zone: characteristics and ecological consequences,
+  \newblock \emph{Ecosystems}, \textbf{10(5)}(2007), 673 -- 687.
+\bibitem{popescu2021riparian}
+  \newblock Popescu, Cristina and Oprina-Pavelescu, Mihaela and Dinu, Valentin and Cazacu, Constantin and Burdon, Francis J and Forio, Marie Anne Eurie and Kupilas, Benjamin and Friberg, Nikolai and Goethals, Peter and McKie, Brendan G and others,
+  \newblock Riparian vegetation structure influences terrestrial invertebrate communities in an agricultural landscape,
+  \newblock \emph{Water}, \textbf{13(2)}(2021), 188
+\end{thebibliography}
+
+\medskip
+% The data information below will be filled by AIMS editorial staff
+Received xxxx 20xx; revised xxxx 20xx.
+\medskip
+
+\end{document}
