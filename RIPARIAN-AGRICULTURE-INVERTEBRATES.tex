@@ -1,6 +1,5 @@
 \documentclass[12pt]{article}
 \usepackage{graphicx}
-\graphicspath{ {./LATEX-FILES/} }
 \usepackage{color}
 \usepackage[section]{placeins}
 \usepackage{amsmath,amssymb,mathrsfs,amsthm}
@@ -32,28 +31,17 @@
 \titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
 \titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
 \titlespacing\subsubsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
-\captionsetup{%
+\captionsetup{
   figurename=Figure,
   tablename=Table
 }
-%\extrafloats{100}
-%\usepackage{float}
-%\usepackage{hyperref}
 \parindent 0 pc
 \parskip 7.5pt
 \makeatletter
 \renewcommand{\footnotesep}{3.5mm}
-%\singlespacing
-%\doublespacing
 \onehalfspace
 \date{}
-% Allow line breaks and .2em stretch in citation lists:
-\def\@citex[#1]#2{\if@filesw\immediate\write\@auxout{\string\citation{#2}}\fi
-  \def\@citea{}\@cite{\@for\@citeb:=#2\do
-    {\@citea\def\@citea{,\linebreak[0]\hskip0pt plus .2em}%
-      \@ifundefined{b@\@citeb}%
-    {{\bf ?}\@warning{Citation `\@citeb' on page \thepage\space undefined}}%
-      \hbox{\csname b@\@citeb\endcsname}}}{#1}}
+
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}{Lemma}[section]
 \newtheorem{corollary}{Corollary}[section]
@@ -86,12 +74,11 @@
 \begin{abstract}
 To be updated later
 \end{abstract}
-%\vspace{-1cm}
 \section{Introduction}
 Riparian environments include river banks, floodplains, and wetlands, among other environmental types. In other words, this ecosystem supports ecologically unique and diverse groups because it represents wetter, colder, and diversified habitats than nearby highland areas as studied by Pettit et al.\cite{pettit2007fire}. These biodiverse transitional areas connect aquatic and terrestrial systems \cite{popescu2021riparian} \\ 
 Riparian buffers, which are often uncultivated, vegetated regions next to streams and rivers, can play an important role in protecting the riparian networks in altered environments\cite{burdon2020assessing}. Such buffers may be beneficial to agricultural output because to their increased biodiversity and community dynamics \cite{forio2020small}. Many invertebrates that operate as biocontrol agents by feeding on plant or animal agricultural pests like those of carabid and staphylinid beetles \cite{andersen2000long} or that aid in crop pollination for example dipterans - a type of winged insects \cite{ssymank2008pollinating}, need on riparian buffers to complete their life-cycles.\\
 Unfortunately, in agricultural catchments, the riparian zones are frequently severely damaged. At various geographical scales, landuse change, deforestation of riparian trees or vegetation, overgrazing, pesticide inputs, and nutrients from agricultural sources all pose a danger to riparian biodiversity and ecosystem services \cite{burdon2013habitat}. As a result, riparian zone protection and enhancement are frequently considered as the initial steps toward correcting the effects of agricultural land use.\\
-In this context, our nonlinear modelling focuses on how wooded riparian buffers have structural effects on riparian invertebrate groups in a heavily agrarian river basin as that of Arges River Basin situated in Romania \cite{popescu2021riparian}.\\
+In this context, our nonlinear modelling focuses on how wooded riparian buffers have structural effects on riparian invertebrate groups in a agrarian river basin as that of Arges River Basin situated in Romania \cite{popescu2021riparian}.\\
 \vspace{-1cm}
 \section{Mathematical Model Formulation}
 Here, a mathematical model is presented that governs the dynamics of riparian vegetation and terrestrial invertebrates interactions, when both grow together in a riparian landscape under the influence of anthroprogenic disturbance that is, agricultural production. In such a riparian ecosystem, if it is considered that $V(t)$ and $I(t)$ denote the riparian vegetation and terrestrial invertebrates respectively in the presence of agricultural land $A(t)$ at any time $t>0$, then interactive dynamics amongst them can be represented in the form of following differential equation system:
@@ -492,145 +479,150 @@ To demonstrate the behaviour of the model, we investigated each parameteric valu
 \item[$\bullet$] In the case of $\gamma$, we chose $0.0005$ as the standard value because numbers less than this quantity exhibit identical behaviour with a minor shift in periodicity. As demonstrated in the figures \ref{fig:time_vs_riparian_gamma}, \ref{fig:time_vs_invertebrates_gamma}, \ref{fig:time_vs_agriculture_gamma} and \ref{fig:rip_inv_agr_gamma}, for values greater than the standard one, the periodicity reduces and convergence occurs faster. All of the numbers we chose like $0.05$, as well as those far higher, such as $40.0005$, demonstrate stability with negative complex eigenvalues.\\
 \item[$\bullet$] We have considered standard value for $\delta$ as $0.003$ which exhibits periodicity as shown in figures \ref{fig:time_vs_riparian_delta}, \ref{fig:time_vs_invertebrates_delta}, \ref{fig:time_vs_agriculture_delta} and \ref{fig:rip_inv_agr_delta}. Although the lower numbers have stable eigenvalues, we see no periodicity as it converges. When we increase the values, they display unstable eigenvalues and no periodic behaviour in graphs.\\
 \end{description}
-\section{Sensitivity Analysis}
-
+\section{Differential Sensitivity Analysis}
+The values obtained from the model simulation provide just a general notion of the parameters of Table \ref{Table 1}; nonetheless, it is necessary to obtain a list of key parameters that might significantly effect the dynamics of the model system. To do this, the differential sensitivity analysis of the model \eqref{sec2:e2} is run with regard to all parameters.
 %%%FIGURES
 \begin{figure}[bp!]
 	\centering
+        \caption{Variation in parameter r}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\centering
 	\includegraphics[width=\textwidth]{time_vs_riparian_r.png}
-		\caption{Change in Riparian Vegetation with Change in values of " r "} \label{fig:time_vs_riparian_r}
+		\caption{Change in Riparian Vegetation with time} \label{fig:time_vs_riparian_r}
 	\end{subfigure}
 \hspace{0.08\textwidth}
         \begin{subfigure}[t]{0.45\textwidth}
                  \centering
          \includegraphics[width=\textwidth]{time_vs_invertebrates_r.png}
-		\caption{Change in Terrestrial Invertebrates with Change in values of " r "} \label{fig:time_vs_invertebrates_r}
+		\caption{Change in Terrestrial Invertebrates with time} \label{fig:time_vs_invertebrates_r}
 	\end{subfigure}
 \vskip\baselineskip
 \begin{subfigure}[t]{0.45\textwidth}
                  \centering
          \includegraphics[width=\textwidth]{time_vs_agriculture_r.png}
-		\caption{Change in Terrestrial Invertebrates with Change in values of " r "} \label{fig:time_vs_agriculture_r}
+		\caption{Change in Terrestrial Invertebrates with time} \label{fig:time_vs_agriculture_r}
 	\end{subfigure}
 \quad
               \begin{subfigure}[t]{0.45\textwidth}
                  \centering
          \includegraphics[width=\textwidth]{rip_inv_agr_r.png}
-		\caption{Three dimensional change in values of " r "} \label{fig:rip_inv_agr_r}
+		\caption{Three dimensional change} \label{fig:rip_inv_agr_r}
 	\end{subfigure}
 \hspace{0.08\textwidth}
 \end{figure}
 \FloatBarrier
 \begin{figure}[bp!]
 	\centering
+        \caption{Variation in parameter $\alpha$}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\centering
 	\includegraphics[width=\textwidth]{time_vs_riparian_alpha.png}
-		\caption{Change in Riparian Vegetation with Change in values of "$\alpha$"} \label{fig:time_vs_riparian_alpha}
+		\caption{Change in Riparian Vegetation with time} \label{fig:time_vs_riparian_alpha}
 	\end{subfigure}
 \hspace{0.08\textwidth}
         \begin{subfigure}[t]{0.45\textwidth}
                  \centering
          \includegraphics[width=\textwidth]{time_vs_invertebrates_alpha.png}
-		\caption{Change in Terrestrial Invertebrates with Change in values of "$\alpha$"} \label{fig:time_vs_invertebrates_alpha}
+		\caption{Change in Terrestrial Invertebrates with time} \label{fig:time_vs_invertebrates_alpha}
 	\end{subfigure}
 \vskip\baselineskip
 \begin{subfigure}[t]{0.45\textwidth}
                  \centering
          \includegraphics[width=\textwidth]{time_vs_agriculture_alpha.png}
-		\caption{Change in Terrestrial Invertebrates with Change in values of "$\alpha$"} \label{fig:time_vs_agriculture_alpha}
+		\caption{Change in Terrestrial Invertebrates with time} \label{fig:time_vs_agriculture_alpha}
 	\end{subfigure}
 \quad
               \begin{subfigure}[t]{0.45\textwidth}
                  \centering
          \includegraphics[width=\textwidth]{rip_inv_agr_alpha.png}
-		\caption{Three dimensional change in values of "$\alpha$"} \label{fig:rip_inv_agr_alpha}
+		\caption{Three dimensional change} \label{fig:rip_inv_agr_alpha}
 	\end{subfigure}
 \hspace{0.08\textwidth}
 \end{figure}
 \FloatBarrier
 \begin{figure}[bp!]
 	\centering
+        \caption{Variation in parameter $\beta$}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\centering
 	\includegraphics[width=\textwidth]{time_vs_riparian_beta.png}
-		\caption{Change in Riparian Vegetation with Change in values of "$\beta$"} \label{fig:time_vs_riparian_beta}
+		\caption{Change in Riparian Vegetation with time} \label{fig:time_vs_riparian_beta}
 	\end{subfigure}
 \hspace{0.08\textwidth}
         \begin{subfigure}[t]{0.45\textwidth}
                  \centering
          \includegraphics[width=\textwidth]{time_vs_invertebrates_beta.png}
-		\caption{Change in Terrestrial Invertebrates with Change in values of "$\beta$"} \label{fig:time_vs_invertebrates_beta}
+		\caption{Change in Terrestrial Invertebrates with time} \label{fig:time_vs_invertebrates_beta}
 	\end{subfigure}
 \vskip\baselineskip
 \begin{subfigure}[t]{0.45\textwidth}
                  \centering
          \includegraphics[width=\textwidth]{time_vs_agriculture_beta.png}
-		\caption{Change in Terrestrial Invertebrates with Change in values of "$\beta$"} \label{fig:time_vs_agriculture_beta}
+		\caption{Change in Terrestrial Invertebrates with time} \label{fig:time_vs_agriculture_beta}
 	\end{subfigure}
 \quad
               \begin{subfigure}[t]{0.45\textwidth}
                  \centering
          \includegraphics[width=\textwidth]{rip_inv_agr_beta.png}
-		\caption{Three dimensional change in values of "$\beta$"} \label{fig:rip_inv_agr_beta}
+		\caption{Three dimensional change} \label{fig:rip_inv_agr_beta}
 	\end{subfigure}
 \hspace{0.08\textwidth}
 \end{figure}
 \FloatBarrier
 \begin{figure}[bp!]
 	\centering
+        \caption{Variation in parameter $\gamma$}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\centering
 	\includegraphics[width=\textwidth]{time_vs_riparian_gamma.png}
-		\caption{Change in Riparian Vegetation with Change in values of "$\gamma$"} \label{fig:time_vs_riparian_gamma}
+		\caption{Change in Riparian Vegetation with time} \label{fig:time_vs_riparian_gamma}
 	\end{subfigure}
 \hspace{0.08\textwidth}
         \begin{subfigure}[t]{0.45\textwidth}
                  \centering
          \includegraphics[width=\textwidth]{time_vs_invertebrates_gamma.png}
-		\caption{Change in Terrestrial Invertebrates with Change in values of "$\gamma$"} \label{fig:time_vs_invertebrates_gamma}
+		\caption{Change in Terrestrial Invertebrates with time} \label{fig:time_vs_invertebrates_gamma}
 	\end{subfigure}
 \vskip\baselineskip
 \begin{subfigure}[t]{0.45\textwidth}
                  \centering
          \includegraphics[width=\textwidth]{time_vs_agriculture_gamma.png}
-		\caption{Change in Terrestrial Invertebrates with Change in values of "$\gamma$"} \label{fig:time_vs_agriculture_gamma}
+		\caption{Change in Terrestrial Invertebrates with time} \label{fig:time_vs_agriculture_gamma}
 	\end{subfigure}
 \quad
               \begin{subfigure}[t]{0.45\textwidth}
                  \centering
          \includegraphics[width=\textwidth]{rip_inv_agr_gamma.png}
-		\caption{Three dimensional change in values of "$\gamma$"} \label{fig:rip_inv_agr_gamma}
+		\caption{Three dimensional change} \label{fig:rip_inv_agr_gamma}
 	\end{subfigure}
 \hspace{0.08\textwidth}
 \end{figure}
 \FloatBarrier
 \begin{figure}[bp!]
 	\centering
+        \caption{Variation in parameter $\delta$}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\centering
 	\includegraphics[width=\textwidth]{time_vs_riparian_delta.png}
-		\caption{Change in Riparian Vegetation with Change in values of "$\delta$"} \label{fig:time_vs_riparian_delta}
+		\caption{Change in Riparian Vegetation with time} \label{fig:time_vs_riparian_delta}
 	\end{subfigure}
 \hspace{0.08\textwidth}
         \begin{subfigure}[t]{0.45\textwidth}
                  \centering
          \includegraphics[width=\textwidth]{time_vs_invertebrates_delta.png}
-		\caption{Change in Terrestrial Invertebrates with Change in values of "$\delta$"} \label{fig:time_vs_invertebrates_delta}
+		\caption{Change in Terrestrial Invertebrates with time} \label{fig:time_vs_invertebrates_delta}
 	\end{subfigure}
 \vskip\baselineskip
 \begin{subfigure}[t]{0.45\textwidth}
                  \centering
          \includegraphics[width=\textwidth]{time_vs_agriculture_delta.png}
-		\caption{Change in Terrestrial Invertebrates with Change in values of "$\delta$"} \label{fig:time_vs_agriculture_delta}
+		\caption{Change in Terrestrial Invertebrates with time} \label{fig:time_vs_agriculture_delta}
 	\end{subfigure}
 \quad
               \begin{subfigure}[t]{0.45\textwidth}
                  \centering
          \includegraphics[width=\textwidth]{rip_inv_agr_delta.png}
-		\caption{Three dimensional change in values of "$\delta$"} \label{fig:rip_inv_agr_delta}
+		\caption{Three dimensional change} \label{fig:rip_inv_agr_delta}
 	\end{subfigure}
 \hspace{0.08\textwidth}
 \end{figure}
