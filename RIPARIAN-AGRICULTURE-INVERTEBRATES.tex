@@ -77,11 +77,12 @@ To be updated later
 \section{Introduction}
 Riparian environments include river banks, floodplains, and wetlands, among other environmental types. In other words, this ecosystem supports ecologically unique and diverse groups because it represents wetter, colder, and diversified habitats than nearby highland areas as studied by Pettit et al.\cite{pettit2007fire}. These biodiverse transitional areas connect aquatic and terrestrial systems \cite{popescu2021riparian} \\ 
 Riparian buffers, which are often uncultivated, vegetated regions next to streams and rivers, can play an important role in protecting the riparian networks in altered environments\cite{burdon2020assessing}. Such buffers may be beneficial to agricultural output because to their increased biodiversity and community dynamics \cite{forio2020small}. Many invertebrates that operate as biocontrol agents by feeding on plant or animal agricultural pests like those of carabid and staphylinid beetles \cite{andersen2000long} or that aid in crop pollination for example dipterans - a type of winged insects \cite{ssymank2008pollinating}, need on riparian buffers to complete their life-cycles.\\
-Unfortunately, in agricultural catchments, the riparian zones are frequently severely damaged. At various geographical scales, landuse change, deforestation of riparian trees or vegetation, overgrazing, pesticide inputs, and nutrients from agricultural sources all pose a danger to riparian biodiversity and ecosystem services \cite{burdon2013habitat}. As a result, riparian zone protection and enhancement are frequently considered as the initial steps toward correcting the effects of agricultural land use.\\
+Unfortunately, in agricultural catchments, the riparian zones are frequently severely damaged. At various geographical scales, landuse change, deforestation of riparian trees or vegetation, overgrazing, pesticide inputs, and nutrients from agricultural sources all pose a danger to riparian biodiversity and ecosystem services \cite{burdon2013habitat}. There are several studies conducted at various catchment level (\cite{cesarini2022riparian};\cite{alemu2018identifying};\cite{heartsill2003riparian};\cite{corbacho2003patterns};\cite{schlosser1981riparian}) to determine various affects of intense human disturbances on riparian vegetion. As a result, riparian zone protection and enhancement are frequently considered as the initial steps toward correcting the effects of agricultural land use.\\
+Despite the fact that riparian buffers are recognised as important elements for preserving ecological balance, there are still voids in our understanding. In recent decades, integrated ecological studies that include invertebrates, have investigated the impact of buffer features (\cite{forio2020small};\cite{flory1999};\cite{kawaguchi2001}). However, models addressing the interactions of terrestrial invertebrate communities with that of riparian vegetation are relatively rare. Some statistical models and theoritical studies \cite{you2015}.\\
 In this context, our nonlinear modelling focuses on how wooded riparian buffers have structural effects on riparian invertebrate groups in a agrarian river basin as that of Arges River Basin situated in Romania \cite{popescu2021riparian}.\\
 \vspace{-1cm}
 \section{Mathematical Model Formulation}
-Here, a mathematical model is presented that governs the dynamics of riparian vegetation and terrestrial invertebrates interactions, when both grow together in a riparian landscape under the influence of anthroprogenic disturbance that is, agricultural production. In such a riparian ecosystem, if it is considered that $V(t)$ and $I(t)$ denote the riparian vegetation and terrestrial invertebrates respectively in the presence of agricultural land $A(t)$ at any time $t>0$, then interactive dynamics amongst them can be represented in the form of following differential equation system:
+A mathematical model is presented that governs the dynamics of riparian vegetation and terrestrial invertebrates interactions, when both grow together in a riparian landscape under the influence of anthroprogenic disturbance that is, agricultural production. In such a riparian ecosystem, if it is considered that $V(t)$ and $I(t)$ denote the riparian vegetation and terrestrial invertebrates respectively in the presence of agricultural land $A(t)$ at any time $t>0$, then interactive dynamics amongst them can be represented in the form of following differential equation system:
 \begin{subequations}\label{sec2:e1}
 	\begin{align}
 	\frac{dV}{dt}&=rV\bigg(1-\frac{V}{K}\bigg)-\alpha V^2A -\beta IV\\
@@ -386,7 +387,7 @@ From the above stated results, we can derive the sufficient condition for stabil
 \begin{equation}\label{sec3:e36}
 \beta \geq 1
 \end{equation} 
-Also, it can be noted that $\tilde b_1\tilde b_2-\tilde b_3>0$ is always true in circumstances of viable coexistence equilibrium. As a result, coexistence equilibrium is locally asymptotically stable. [WRITE THE $\beta$ SQAURE THING]
+Also, it can be noted that $\tilde b_1\tilde b_2-\tilde b_3>0$ is always true in circumstances of viable coexistence equilibrium due to the presence of $\beta^2$ in equation \eqref{sec3:e35}. [EDIT THIS LINE ] .As a result, coexistence equilibrium is locally asymptotically stable.
 Thus, the following theorem may be expressed in terms of local stability characteristics of distinct equilibria:
 \begin{theorem}\label{Theorem 3.4}
 For the model system \eqref{sec2:e2}
@@ -394,7 +395,7 @@ For the model system \eqref{sec2:e2}
 \item Trivial equilibrium $E_0(0,0,0)$ is always unstable.
 \item Axial equilibrium $E_1(0,0,1)$ is always unstable.
 \item Agriculture - free equilibrium $E_2(\hat V,\hat I,0)$ is unconditionally unstable.
-\item When the feasibility condition of the equilibrium is met, coexistence equilibrium $E_3(\tilde V,\tilde I,\tilde A)$ is locally asymptotically stable provided the condition $b_3>0$ holds true.
+\item When the feasibility condition of the equilibrium is met, coexistence equilibrium $E_3(\tilde V,\tilde I,\tilde A)$ is locally asymptotically stable.
 \end{enumerate}
  \end{theorem}
 %HOPF BIFURCATION results to be put here
@@ -481,6 +482,7 @@ To demonstrate the behaviour of the model, we investigated each parameteric valu
 \end{description}
 \section{Differential Sensitivity Analysis}
 The values obtained from the model simulation provide just a general notion of the parameters of Table \ref{Table 1}; nonetheless, it is necessary to obtain a list of key parameters that might significantly effect the dynamics of the model system. To do this, the differential sensitivity analysis of the model \eqref{sec2:e2} is run with regard to all parameters.
+\section{Conclusion}
 %%%FIGURES
 \begin{figure}[bp!]
 	\centering
@@ -634,6 +636,10 @@ The values obtained from the model simulation provide just a general notion of t
   Popescu, C., Oprina-Pavelescu, M., Dinu, V., Cazacu, C., Burdon, F. J., Forio, M. A. E., ... \& Rîșnoveanu, G. (2021). Riparian vegetation structure influences terrestrial invertebrate communities in an agricultural landscape. Water, 13(2), 188.
 \bibitem{burdon2020assessing}
   Burdon, F. J., Ramberg, E., Sargac, J., Forio, M. A. E., De Saeyer, N., Mutinova, P. T., ... \& McKie, B. G. (2020). Assessing the benefits of forested riparian zones: A qualitative index of riparian integrity is positively associated with ecological status in European streams. Water, 12(4), 1178.
+\bibitem{cesarini2022riparian}
+  Cesarini, G., \& Scalici, M. (2022). Riparian vegetation as a trap for plastic litter. Environmental Pollution, 292, 118410.
+\bibitem{alemu2018identifying}
+  Alemu, T., Weyuma, T., Alemayehu, E., \& Ambelu, A. (2018). Identifying riparian vegetation as indicator of stream water quality in the Gilgel Gibe catchment, southwestern Ethiopia. Ecohydrology, 11(1), e1915.
 \bibitem{ssymank2008pollinating}
   Ssymank, A., Kearns, C. A., Pape, T., \& Thompson, F. C. (2008). Pollinating flies (Diptera): a major contribution to plant diversity and agricultural production. Biodiversity, 9(1-2), 86-89.
 \bibitem{forio2020small}
@@ -642,6 +648,18 @@ The values obtained from the model simulation provide just a general notion of t
   Andersen, A., \& Eltun, R. (2000). Long‐term developments in the carabid and staphylinid (Col., CArabidae and Staphylinidae) fauna during conversion from conventional to bilogivcal farming. Journal of Applied Entomology, 124(1), 51-56.
 \bibitem{burdon2013habitat}
   Burdon, F. J., McIntosh, A. R., \& Harding, J. S. (2013). Habitat loss drives threshold response of benthic invertebrate communities to deposited sediment in agricultural streams. Ecological Applications, 23(5), 1036-1047.
+\bibitem{heartsill2003riparian}
+  Heartsill-Scalley, T., \& Aide, T. M. (2003). Riparian vegetation and stream condition in a tropical agriculture–secondary forest mosaic. Ecological Applications, 13(1), 225-234.
+\bibitem{corbacho2003patterns}
+  Corbacho, C., Sánchez, J. M., \& Costillo, E. (2003). Patterns of structural complexity and human disturbance of riparian vegetation in agricultural landscapes of a Mediterranean area. Agriculture, Ecosystems \& Environment, 95(2-3), 495-507.
+\bibitem{schlosser1981riparian}
+  Schlosser, I. J., \& Karr, J. R. (1981). Riparian vegetation and channel morphology impact on spatial patterns of water quality in agricultural watersheds. Environmental Management, 5(3), 233-243.
+\bibitem{flory1999}
+Flory, E. A., \& Milner, A. M. (1999). Influence of riparian vegetation on invertebrate assemblages in a recently formed stream in Glacier Bay National Park, Alaska. Journal of the North American Benthological Society, 18(2), 261-273.
+\bibitem{kawaguchi2001}
+  Kawaguchi, Y., \& Nakano, S. (2001). Contribution of terrestrial invertebrates to the annual resource budget for salmonids in forest and grassland reaches of a headwater stream. Freshwater Biology, 46(3), 303-316.
+\bibitem{you2015}
+  You, X., Liu, J., \& Zhang, L. (2015). Ecological modeling of riparian vegetation under disturbances: a review. Ecological modelling, 318, 293-300.
 \bibitem{edwards1996effect}
   Edwards, E. D., \& Huryn, A. D. (1996). Effect of riparian land use on contributions of terrestrial invertebrates to streams. Hydrobiologia, 337(1), 151-159.
 \bibitem{ramey2017terrestrial}
