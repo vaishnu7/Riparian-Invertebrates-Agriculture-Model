@@ -1,15 +1,14 @@
 \documentclass[12pt]{article}
 \usepackage{graphicx}
 \usepackage{color}
+\usepackage{soul}
 \usepackage[section]{placeins}
 \usepackage{amsmath,amssymb,mathrsfs,amsthm}
-\usepackage{amsfonts}
+\usepackage[colorlinks]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
 \usepackage{multicol}
-\usepackage{graphicx}
-\usepackage{color}
 \usepackage{pdfcolmk}
 \usepackage[nice]{nicefrac}
-\usepackage{amsthm}
 \usepackage{latexsym}
 \usepackage{dsfont}
 \usepackage{setspace}
@@ -22,7 +21,6 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{enumerate}
-\usepackage{nccmath}
 \usepackage{multirow}
 \usepackage{tabulary}
 \usepackage{pdflscape}
@@ -65,23 +63,23 @@
 \affil[1,2]{Birla Institute of Technology Mesra, Ranchi - 835215, Jharkhand, INDIA}
 
 \title{RIPARIAN-AGRICULTURE-INVERTEBRATES INTERACTIVE DYNAMICS}
-\date{}
 \vspace{-1cm}
 
 \begin{document}
 \maketitle
 \vspace{-1cm}
 \begin{abstract}
-To be updated later
+Excessive landuse owing to agricultural methods has not only resulted in riparian plant depletion, but has also worsened the habitat of terrestrial invertebrates living in riparian ecosystems that encompasses river banks, floodplains and wetlands. With these dynamic interactions in mind, a nonlinear model is developed using a set of differential equations. The model, which includes riparian vegetation, terrestrial invertebrates, and agricultural production as system variables, is based on the notion that agricultural activities constitute one of the most intensive forms of anthropogenic disturbance. The generated model is examined mathematically for qualitative aspects of its solutions at equilibrium, such as existence and stabilities. The model study demonstrates the circumstances under which agricultural production, riparian vegetation, and terrestrial invertebrates can coexist to create a stable system. These intuitive conclusions are supported by quantitative data in which the sensitivity of different model parameters to model outcomes is studied using the differential sensitivity analysis approach. As a result, it is advised that agricultural developments be controlled by the execution of government plans, which should include monitoring unlawful encroachment of wooded area near riparian habitats.
 \end{abstract}
+
 \section{Introduction}
-Riparian environments include river banks, floodplains, and wetlands, among other environmental types. In other words, this ecosystem supports ecologically unique and diverse groups because it represents wetter, colder, and diversified habitats than nearby highland areas as studied by Pettit et al.\cite{pettit2007fire}. These biodiverse transitional areas connect aquatic and terrestrial systems \cite{popescu2021riparian} and provides life support to these organisms. Riparian vegetation influences a variety of important ecological functions in relation to aquatic habitats, such as food provision, temperature regulation of stream water via evapotranspiration and shading, provision of a buffer zone that filters sediments and controls nutrients, and stream bank stabilisation (\cite{hood2000};\cite{richardson2007}). In case of terrestrial invertebrates, riparian buffers are essential habitat patches because they not only provide food but also locations for web construction and snare hunting, life-stage microhabitats and shelter, and overwintering and egg-laying sites \cite{popescu2021riparian}.\\ 
+Riparian circumscribe diverse ecosystems that include river banks, floodplains, and wetlands. In other words, this ecosystem supports ecologically unique and diverse groups because it represents wetter, colder, and diversified habitats than nearby highland areas \cite{pettit2007fire}. In particular, these biodiverse transitional areas connect aquatic and terrestrial systems \cite{popescu2021riparian}, subsidize food webs and habitats to aquatic, amphibious and terrestrial organisms \cite{capron2020}. Riparian vegetation has an impact on a number of crucial ecological functions related to habitats, including food provision, temperature regulation of stream water via evapotranspiration and shading, provision of a buffer zone that filters sediments and controls nutrients, and stream bank stabilisation (\cite{hood2000};\cite{richardson2007}). For terrestrial invertebrates, riparian buffers are important habitat patches as well because they supply not only food but also spots for web construction and snare hunting, life-stage microhabitats and refuge, and overwintering and egg-laying sites \cite{popescu2021riparian}.\\ 
 Riparian buffers, which are often uncultivated, vegetated regions next to streams and rivers, can play an important role in protecting the riparian networks in altered environments\cite{burdon2020assessing}. Such buffers may be beneficial to agricultural output because to their increased biodiversity and community dynamics \cite{forio2020small}. Many invertebrates that operate as biocontrol agents by feeding on plant or animal agricultural pests like those of carabid and staphylinid beetles \cite{andersen2000long} or that aid in crop pollination for example dipterans - a type of winged insects \cite{ssymank2008pollinating}, need on riparian buffers to complete their life-cycles.\\
-Unfortunately, in agricultural catchments, the riparian zones are frequently severely damaged. At various geographical scales, landuse change, deforestation of riparian trees or vegetation, overgrazing, pesticide inputs, and nutrients from agricultural sources all pose a danger to riparian biodiversity and ecosystem services \cite{burdon2013habitat}. There are several studies conducted at various catchment level (\cite{cesarini2022riparian};\cite{alemu2018identifying};\cite{heartsill2003riparian};\cite{corbacho2003patterns};\cite{schlosser1981riparian}) to determine various affects of intense human disturbances on riparian vegetion. As a result, riparian zone protection and enhancement are frequently considered as the initial steps toward correcting the effects of agricultural land use.\\
-Despite the fact that riparian buffers are recognised as important elements for preserving ecological balance, there are still voids in our understanding. In recent decades, integrated ecological studies that include invertebrates, have investigated the impact of buffer features (\cite{forio2020small};\cite{flory1999};\cite{kawaguchi2001}). However, models addressing the interactions of terrestrial invertebrate communities with that of riparian vegetation are relatively rare. Few mathematical analyses based on invertebrates in riparian environments (\cite{wipfli1997};\cite{sabo2002};\cite{you2015};\cite{burdon2020};\cite{steward2022}). In this context, our nonlinear modelling focuses on how wooded riparian buffers have temporal effects on riparian invertebrate groups in a agrarian river basin as that of Arges River Basin situated in Romania \cite{popescu2021riparian}. Due to a lack of sufficient temporal data, we developed a dimensionless model that may be fitted in any dataset when such investigations are undertaken by ecologists in the future.\\
+Unfortunately, in agricultural catchments, the riparian zones are frequently severely damaged. At various geographical scales, landuse change, deforestation of riparian trees or vegetation, overgrazing, pesticide inputs, and nutrients from agricultural sources all pose a danger to riparian biodiversity and ecosystem services \cite{burdon2013habitat}. There are several studies conducted at various catchment level (\cite{cesarini2022riparian};\cite{alemu2018identifying};\cite{heartsill2003riparian};\cite{corbacho2003patterns};\cite{schlosser1981riparian}) to determine various affects of intense human disturbances on riparian vegetion. As a result, riparian zone protection and enhancement are frequently considered as the initial steps toward correcting the effects of agricultural productivity.\\
+Despite the fact that riparian buffers are recognised as important elements for preserving ecological balance, there are still voids in our understanding. In recent decades, integrated ecological studies that include invertebrates, have investigated the impact of buffer features (\cite{forio2020small};\cite{flory1999};\cite{kawaguchi2001}). However, models addressing the interactions of terrestrial invertebrate communities with that of riparian vegetation are relatively rare. Few mathematical analyses based on invertebrates in riparian environments (\cite{steward2022};\cite{wipfli1997};\cite{sabo2002};\cite{you2015};\cite{burdon2020}). In this context, our nonlinear modelling focuses on how wooded riparian buffers have temporal effects on riparian invertebrate groups in a agrarian river basin as that of Arges River Basin situated in Romania \cite{popescu2021riparian}. Due to a lack of sufficient temporal data, we developed a dimensionless model that may be fitted in any dataset when such investigations are undertaken by ecologists in the future.\\
 \vspace{-1cm}
 \section{Mathematical Model Formulation}
-A mathematical model is presented that governs the dynamics of riparian vegetation and terrestrial invertebrates interactions, when both grow together in a riparian landscape under the influence of anthroprogenic disturbance that is, agricultural production. In such a riparian ecosystem, if it is considered that $V(t)$ and $I(t)$ denote the riparian vegetation and terrestrial invertebrates respectively in the presence of agricultural land $A(t)$ at any time $t>0$, then interactive dynamics amongst them can be represented in the form of following differential equation system:
+A mathematical model is presented that governs the dynamics of riparian vegetation and terrestrial invertebrates interactions, when both grow together in a riparian landscape under the influence of anthroprogenic disturbance that is, agricultural production. In such a riparian ecosystem, if it is considered that $V(t)$ and $I(t)$ denote the riparian vegetation and terrestrial invertebrates respectively in the presence of agricultural productivity $A(t)$ at any time $t>0$. Variation in riparian canopy composition influences nearby trophic levels in diverse ways, which ultimately affects the fluxes of energy and nutrients that link biodiversity and functioning in surrounding ecosystems \cite{kominoski2011}. Due to such physical and chemical properties, as well as changes in terrestrial resource subsidies, the mix of forest tree species can impact the structure and functioning of terrestrial invertebrates. Because of this intricacy, other interactions of invertebrates with the riparian vegetation are not considered in this model. We reasoned that invertebrates interact with riparian vegetation as they require forest resources to survive which should be considered as a negative influence on growth of riparian vegetation. Many of these invertebrates are beneficial to agricultural production because they suppress pests and act as soil temperature change sensors, which contributes to the improvement of agricultural yield. Keeping these situations in mind, the interactive dynamics amongst them can be represented in the form of following differential equation system:
 \begin{subequations}\label{sec2:e1}
 	\begin{align}
 	\frac{dV}{dt}&=rV\bigg(1-\frac{V}{K}\bigg)-\alpha V^2A -\beta IV\\
@@ -93,8 +91,8 @@ with $V(0) \geq 0, I(0)\geq 0, A(0)\geq 0$. Model parameters viz. $r, K, \alpha,
 The developed system \eqref{sec2:e1} is based on the following points:
 \begin{enumerate}[i).]
 \item The riparian ecosystem is considered to a finite area in a particular geographical area like the area mentioned in \cite{popescu2021riparian}. As a result, riparian vegetation grows logistically with a net growth rate of $r$ and a carrying capacity of $K$. Because agricultural productivity is increasing in the same riparian habitat, logistic expansion with net growth rates $s$ and carrying capacity $L$ is also occurring. This type of anthropogenic disturbance has a direct impact on the carrying capacity of riparian vegetation, which is why we introduced the square term $\alpha V^2A$ in first equation \eqref{sec2:e1}.
-\item Terrestrial invertebrates in riparian ecosystem cannot thrive without the presence of riparian vegetation as their survival is reliant on riparian vegetation for nutrition (\cite{popescu2021riparian};\cite{edwards1996effect};\cite{ramey2017terrestrial};\cite{forio2020small}). In view of this This affects the growth of riparian vegetation negatively at a rate coefficient $\beta$ and $\theta$. There also exists intra-specific competition between invertebrates for limited resources with the rate coefficient $\gamma$, which may be viewed as a negative influence on growth rate of invertebrates \cite{ruetz2003interspecific}. As a result, we introduced the square term $\gamma I^2$ to demonstrate the direct influence of intre-specific competition on carrying capacity of invertebrates.
-\item Agricultural land is used to grow crops, but it is also one of the major causes of riparian vegetation loss, which has negative consequences for both terrestrial and aquatic invertebrates. As a result, we have demonstrated this detrimental influence on vegetation growth at a rate of $\alpha$. Invertebrate habitat is being impacted at a rate of $\delta$ due to loss of vegetation. Agricultural land, on the other hand, will have a positive impact since some invertebrate species have been shown to be beneficial to crop development as natural pest killers (\cite{krell2015aquatic};\cite{riis2020global};\cite{stockan2014effects};\cite{cole2012riparian}) or temperature sensors (\cite{greenwood1995patial}) which is denoted by the coefficient $\lambda$.
+\item Terrestrial invertebrates in riparian ecosystem cannot thrive without the presence of riparian vegetation as their survival is reliant on riparian vegetation (\cite{popescu2021riparian};\cite{edwards1996effect};\cite{ramey2017terrestrial};\cite{forio2020small}). This affects the growth of riparian vegetation negatively at a rate coefficient $\beta$ and $\theta$. There also exists intra-specific competition between invertebrates for limited resources with the rate coefficient $\gamma$, which may be viewed as a negative influence on growth rate of terrestrial invertebrates \cite{ruetz2003interspecific}. As a result, we introduced the square term $\gamma I^2$ to demonstrate the direct influence of intre-specific competition on carrying capacity of invertebrates.
+\item Agricultural land use due to various productivity, is also one of the major causes of riparian vegetation loss, which has negative consequences for terrestrial invertebrates. As a result, we have demonstrated this detrimental influence on vegetation growth at a rate of $\alpha$. Invertebrate habitat is being impacted at a rate of $\delta$ due to loss of vegetation. Agricultural productivity, on the other hand, will have a positive impact since some invertebrate species have been shown to be beneficial to crop development as natural pest killers (\cite{krell2015aquatic};\cite{riis2020global};\cite{stockan2014effects};\cite{cole2012riparian}) or temperature sensors \cite{greenwood1995patial} which is denoted by the coefficient $\lambda$.
 \end{enumerate}
 The defined model \eqref{sec2:e1} can be reduced for mathematical analysis by inserting the dimensionless quantities below:\\
 \begin{equation*}
@@ -179,7 +177,7 @@ For the model system \eqref{sec2:e2}, equilibrium states can be identified by se
 \begin{enumerate}[i)]
 \item Trivial - equilibrium $E_0(0,0,0)$, that is always feasible.
 \item Riparian vegetation and terrestrial invertebrates - free equilibrium $E_1(0,0,1)$, that is always feasible.
-\item Agriculture - free equilibrium $E_2(\hat V, \hat I, 0)$. For the existence of $E_2$, it is required to solve the following equations simultaneously
+\item Agricultural production - free equilibrium $E_2(\hat V, \hat I, 0)$. For the existence of $E_2$, it is required to solve the following equations simultaneously
 \begin{equation}\label{sec3:e8}
 r \hat V(1- \hat V)-\alpha \hat V^2 \hat A - \beta \hat I \hat V=0
 \end{equation}
@@ -269,10 +267,10 @@ Or,
 \end{enumerate}
 As a result of the preceding explanation, the following theorem about equilibrium states and their existence is established.
 \begin{theorem}\label{Theorem 3.3}
-For the model system \eqref{sec2:e2},
+For the system \eqref{sec2:e2} of equations,
 \begin{enumerate}[i.)]
 \item Trivial $E_0(0,0,0)$ and riparian vegetation and terrestrial invertebrate - free $E_1(0,0,1)$ equilibria are feasible without any condition.
-\item Agriculture free eqilibrium $E_2(\hat V, \hat I, 0)$ is feasible if:
+\item Agricultural production free eqilibrium $E_2(\hat V, \hat I, 0)$ is feasible if:
 \begin{enumerate}
 \item $\frac{\gamma}{\theta \beta} + \frac{K \beta}{r} >0$
 \end{enumerate}
@@ -321,7 +319,7 @@ J(E_1)=
 	0 & 1 & -s\\
 \end{matrix}}\right)
 \end{equation}
-The eigenvalues are $r$, $-\delta$ and $-s$, out of which two eigenvalues are always negative. Hence, the equilibrium $E_1$ has local stable manifold in $I-A$ plane and asymptotically unstable in the $V$ direction.
+The eigenvalues are $r$, $-\delta$ and $-s$, out of which two eigenvalues are always negative. Hence, the equilibrium $E_1$ has local stable manifold in $I-A$ plane and unstable in the $V$ direction.
 \item The Jacobian matrix at the equilibrium state $E_2(\hat V, \hat I, 0)$ is
 \begin{equation}\label{sec3:e31}
 J(E_2)=
@@ -337,7 +335,7 @@ Here, the eigenvalues are as follows:
 \end{equation}
 And,
 \begin{equation}
-\lambda = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\lambda^2 + (a+b)\lambda + (ab-c) = 0
 \end{equation}
 Where,
 \begin{align}
@@ -345,7 +343,7 @@ a &= 1\\
 b &= (\beta \hat I \hat V + 2r\hat V - r -\theta \beta \hat V + 2\gamma \hat I)\\
 c &= (\beta \hat I \hat V + 2r\hat V - r)(-\theta \beta \hat V + 2\gamma \hat I)-\beta^2\theta \hat V \hat I
 \end{align}
-Thus, it can be easily determined that among the three eigenvalues, out of which two of them are always positive. Therefore, the equlibrium $E_2$ is asymptotically unstable in $A$ direction and is stable in $V$ or $I$ direction. [RE-CHECK THIS LINE]
+Thus, it can be easily determined that among the three eigenvalues, out of which two of them are always positive. Therefore, the equlibrium $E_2$ is unstable in $A$ direction and is stable in $V-I$ plane.
 \item At equilibrium state $E_3(\tilde V, \tilde I, \tilde A)$, the Jacobian matrix is:
 \begin{equation}\label{sec3:e33}
 J(E_3)=
@@ -384,20 +382,21 @@ From the above stated results, we can derive the sufficient condition for stabil
 \begin{equation}\label{sec3:e36}
 \beta \geq 1
 \end{equation} 
-Also, it can be noted that $\tilde b_1\tilde b_2-\tilde b_3>0$ is always true in circumstances of viable coexistence equilibrium due to the presence of $\beta^2$ in equation \eqref{sec3:e35}. [EDIT THIS LINE ] .As a result, coexistence equilibrium is locally asymptotically stable.
+\hl{Also, it can be noted that $\tilde b_1\tilde b_2-\tilde b_3>0$ is always true in circumstances of viable coexistence equilibrium due to the presence of $\beta^2$ in equation} \eqref{sec3:e35}. As a result, coexistence equilibrium is locally asymptotically stable.
 Thus, the following theorem may be expressed in terms of local stability characteristics of distinct equilibria:
 \begin{theorem}\label{Theorem 3.4}
 For the model system \eqref{sec2:e2}
 \begin{enumerate}[i)]
 \item Trivial equilibrium $E_0(0,0,0)$ is always unstable.
 \item Axial equilibrium $E_1(0,0,1)$ is always unstable.
-\item Agriculture - free equilibrium $E_2(\hat V,\hat I,0)$ is unconditionally unstable.
+\item Agricultural production - free equilibrium $E_2(\hat V,\hat I,0)$ is unconditionally unstable.
 \item When the feasibility condition of the equilibrium is met, coexistence equilibrium $E_3(\tilde V,\tilde I,\tilde A)$ is locally asymptotically stable.
 \end{enumerate}
  \end{theorem}
+
 %HOPF BIFURCATION results to be put here
 \subsection{Global Stability}
-The model is examined here in order to identify adequate criteria for the non-existence of periodic solutions in the vicinity of coexistence equilibrium $E_3$. The Lyapunov stability criteria is used to establish the conditions.
+The model is investigated here in order to identify appropriate criteria near coexistence equilibrium $E_3$,due to the lack of periodic solutions. The Lyapunov stability criteria is used to establish the conditions.
 The Lyapunov function can be written as follows:
 \begin{equation}\label{sec3:e36}
 \mathbb P = (V-V^*-V^*\ln\frac{V}{V^*})+m_1(I-I^*-I^*\ln\frac{I}{I^*})+m_2(A-A^*-A^*\ln\frac{A}{A^*})
@@ -469,17 +468,35 @@ In addition to qualitative research, numerical simulation appears to be helpful 
 \begin{equation}
 r=0.9, \alpha=.005, \beta=1.5, \theta=.9, \gamma=.0005, \delta=.003
 \end{equation}
-To demonstrate the behaviour of the model, we investigated each parameteric value while maintaining the others constant. We assumed that the starting values of $V$, $I$, and $A$ as $0.2, 0.3$, and $0.5$, respectively. The values investigated here all meet the Lyapunov stability requirement, and the remaining observations are as follows:
+To demonstrate the behaviour of the model, we investigated each parameteric value mentioned in Table \ref{Table 1}, while maintaining the others constant. We assumed that the starting values of $V$, $I$, and $A$ as $0.2, 0.3$, and $0.5$, respectively. The values investigated here all meet the Lyapunov stability requirement, and the remaining observations are as follows:
 \begin{description}
-\item[$\bullet$] We experimented with three alternative values of the parameter $r$, which represents the intrinsic growth rate of vegetation. The parameter $r$ is assumed to have a base value of $0.9$. We observed periodic activity in the graph at this point, and convergence occurs when we extend the time duration to roughly $5000$. However, at smaller values, such as $0.009$ at roughly time $1000$, we can observe that the convergence is achieved without much periodicity, as seen in figures \ref{fig:time_vs_riparian_r}, \ref{fig:time_vs_invertebrates_r}, \ref{fig:time_vs_agriculture_r} and \ref{fig:rip_inv_agr_r}. Even though there is periodicity in the graph for larger values of $r$, such as $1.9$, the convergence occurs at a comparable rate to that of lesser values of $r$. The majority of complex eigenvalues are negative which exhibits stability.\\
-\item[$\bullet$] For the parameter $\alpha$, we chose a base value of $0.005$, which exhibits periodicity comparable to that of $r$, where convergence occurs over a longer time period. As shown in figures \ref{fig:time_vs_riparian_alpha}, \ref{fig:time_vs_invertebrates_alpha}, \ref{fig:time_vs_agriculture_alpha} and \ref{fig:rip_inv_agr_alpha}, smaller values of $\alpha$ behave similarly to the conventional value. We can observe that convergence is achieved without any periodicity for larger values and complex eigenvalues shows stability for the points we have studied.\\
-\item[$\bullet$] We chose $1.5$ as the standard value for $\beta$ since in-equation \eqref{sec3:e36} requires us to consider values higher than or equal to $1$. The values $1$ and $1.5$ exhibit similar behaviour, but with a minor difference in frequency. From the figures \ref{fig:time_vs_riparian_beta}, \ref{fig:time_vs_invertebrates_beta}, \ref{fig:time_vs_agriculture_beta} and \ref{fig:rip_inv_agr_beta}We may conclude that for larger values of $\beta$, convergence occurs after a longer amount of time. However, with decreasing values such as $0.05$, the model becomes unstable as the imaginary part of the eigenvalues vanish leaving behind a combination of real negative and positive real numbers.\\
-\item[$\bullet$] In the case of $\gamma$, we chose $0.0005$ as the standard value because numbers less than this quantity exhibit identical behaviour with a minor shift in periodicity. As demonstrated in the figures \ref{fig:time_vs_riparian_gamma}, \ref{fig:time_vs_invertebrates_gamma}, \ref{fig:time_vs_agriculture_gamma} and \ref{fig:rip_inv_agr_gamma}, for values greater than the standard one, the periodicity reduces and convergence occurs faster. All of the numbers we chose like $0.05$, as well as those far higher, such as $40.0005$, demonstrate stability with negative complex eigenvalues.\\
-\item[$\bullet$] We have considered standard value for $\delta$ as $0.003$ which exhibits periodicity as shown in figures \ref{fig:time_vs_riparian_delta}, \ref{fig:time_vs_invertebrates_delta}, \ref{fig:time_vs_agriculture_delta} and \ref{fig:rip_inv_agr_delta}. Although the lower numbers have stable eigenvalues, we see no periodicity as it converges. When we increase the values, they display unstable eigenvalues and no periodic behaviour in graphs.\\
+\item[$\bullet$] We experimented with three alternative values of the parameter $r$. The parameter $r$ is assumed to have a base value of $0.9$. We observed periodic activity in the graph at this point, and convergence occurs when we extend the time duration. However, at smaller values, such as $0.009$ at roughly time $1000$, we can observe that the convergence is achieved without much periodicity, as seen in \cref{fig:time_vs_riparian_r}, \cref{fig:time_vs_invertebrates_r}, \cref{fig:time_vs_agriculture_r} and \cref{fig:rip_inv_agr_r}. Even though there is periodicity in the graph for larger values of $r$, such as $1.9$, the convergence occurs at a comparable rate to that of lesser values of $r$. The majority of complex eigenvalues are negative which exhibits stability.\\
+\item[$\bullet$] For the parameter $\alpha$, we chose a base value of $0.005$, which exhibits periodicity comparable to that of $r$, where convergence occurs over a longer time period. As shown in  \cref{fig:time_vs_riparian_alpha}, \cref{fig:time_vs_invertebrates_alpha}, \cref{fig:time_vs_agriculture_alpha} and \cref{fig:rip_inv_agr_alpha}, smaller values of $\alpha$ behave similarly to the conventional value. It is then observed that convergence is achieved without any periodicity for larger values and complex eigenvalues shows stability for all the points we have studied.\\
+\item[$\bullet$] We chose $1.5$ as the standard value for $\beta$ since in equation \eqref{sec3:e36} requires us to consider values higher than or equal to $1$. The values $1$ and $1.5$ exhibit similar behaviour, but with a minor difference in frequency or periodicity. From \cref{fig:time_vs_riparian_beta}, \cref{fig:time_vs_invertebrates_beta}, \cref{fig:time_vs_agriculture_beta} and \cref{fig:rip_inv_agr_beta}, we may conclude that for larger values of $\beta$, convergence occurs after a longer period. However, with decreasing values such as $0.05$, the model becomes unstable as the imaginary part of the eigenvalues vanish, leaving behind a combination of real negative and positive real numbers.\\
+\item[$\bullet$] In the case of $\gamma$, we chose $0.0005$ as the standard value because numbers less than this exhibit identical behaviour with a minor shift in periodicity. As demonstrated in \cref{fig:time_vs_riparian_gamma}, \cref{fig:time_vs_invertebrates_gamma}, \cref{fig:time_vs_agriculture_gamma} and \cref{fig:rip_inv_agr_gamma}, for values greater than the standard one, the periodicity reduces and convergence occurs faster. All of the numbers we chose like $0.05$, as well as those far higher, such as $40.0005$, demonstrate stability with negative complex eigenvalues.\\
+\item[$\bullet$] We have considered standard value for $\delta$ as $0.003$ which exhibits periodicity as shown in \cref{fig:time_vs_riparian_delta}, \cref{fig:time_vs_invertebrates_delta}, \cref{fig:time_vs_agriculture_delta} and \cref{fig:rip_inv_agr_delta}. Although the lower numbers have stable eigenvalues, we see no periodicity as it converges. When we increase the values, they display unstable eigenvalues and no periodic behaviour in graphs.\\
 \end{description}
 \section{Differential Sensitivity Analysis}
-The values obtained from the model simulation provide just a general notion of the parameters of Table \ref{Table 1}; nonetheless, it is necessary to obtain a list of key parameters that might significantly effect the dynamics of the model system. To do this, the differential sensitivity analysis of the model \eqref{sec2:e2} is run with regard to all parameters.
+The values obtained from the model simulation provide just a general notion of the parameters of \autoref{Table 1}; nonetheless, it is necessary to compile a list of key parameters that may have a significant impact on the dynamics of the model system. To accomplish this, the sensitivity analysis of the model \eqref{sec2:e2} is performed for all parameters. as studied by Bortz and Nelson \cite{bortz2004}. We have ignored the sensitivity analysis of parameter $\theta$ as it is dependent upon the parameter $\beta$.\\
+By adding the logarithmic sensitivity function $F_w(t,w)$, the logarithmic sensitivity solutions with regard to the parameters are assessed as:
+\begin{equation}\label{sec5:e1}
+F_w(t,w)=\frac{\partial F(t,w)}{\partial w}
+\end{equation}
+where parameter is $w$ and $F$ is the dynamical variable. Logarithmic sensitivity solution $\xi^w_F$ can be written as:
+\begin{equation}\label{sec5:e2}
+\xi^w_F=w\frac{F_w}{F}
+\end{equation}
+These solutions represent a percentage change in solution equal to twice the parameter value. In our case, the sensitivity solutions for each of the dynamic variables against each parameter were recorded after a 10-year period. The obtained solutions corresponding to equilibrium values when the global stability requirement of dynamical variables $V$, $I$, and $A$ is satisfied are illustrated in \cref{fig:sensitivity}, and the conclusions are provided below.
+\begin{enumerate}[a)]
+\item In case of riparian vegetation that is for dynamic variable $V$, we may deduce from the \cref{fig:V_sen} that for parameters $r$ and $\gamma$ the riparian vegetation is favourable impacted and adversely influenced for $\alpha$, $\beta$ and $\delta$.
+\item Similarly in case of terrestrial invertebrates that is $I$, we can conclude from the \cref{fig:I_sen} that $r$ and $\beta$ impact the invertebrates positively and negatively influenced by $\alpha$, $\gamma$ and $\delta$.
+\item Finally, in the instance of agricultural productivity variable $A$, we observe that in \cref{fig:A_sen}, $r$ and $\beta$ are favourably and negatively impacted by $\alpha$, $\gamma$, and $\delta$, which is similar to invertebrates.
+\end{enumerate}
 \section{Conclusion}
+ Agricultural productivity and riparian vegetation are both crucial components for people since they supply a variety of resources that humans require in order to exist. However, landuse near heavily sedimented regions is growing as a result of rising population and demand. Agricultural productivity, among many other anthropogenic disturbances, is a source of worry for terrestrial invertebrates that live in such places. Forested riparian buffers promote more invertebrate diversity and more unique ecosystems in general \cite{popescu2021riparian}. Their habitat is completely reliant on riparian vegetation since it not only provides a source of food but also serves as a location for a variety of activities such as ambush hunting, that are essential to their existence.\\
+In this study, we present a non-linear mathematical model that depicts the interactions of agricultural productivity and terrestrial invertebrates in the presence of riparian vegetation. It has been discovered that the system of equations \eqref{sec2:e2} exhibits rich dynamical features in terms of co-existence equilibrium stability. Possible equilibrium states for the system have been identified as follows: trivial equilibrium $E 0$, riparian vegetation and terrestrial invertebrates-free equilibrium $E_1$, and agricultural production-free equilibrium $E_2$. $E_2$ and $E_3$ co-existence equilibrium. Equilibrium states $E_0$ and $E_1$ are always feasible, whereas equilibrium states $E_2$ and $E_3$ are only feasible under certain conditions.\\
+The local stability around all equilibria has been studied. In terms of coexistence equilibrium, it has been discovered that the system can show a unique locally stable coexistence equilibrium that can also be globally stable under certain parametric constraints. The analysis revealed that the system cannot reach trivial equilibrium for any parametric value, as it is always unstable. We used Lyapunov stability conditions to assess the existence of global stability for certain parametric values. Although, the results of the model do not exhibit any Hopf-Bifurcations around co-existence equilibrium. A differential sensitivity analysis was performed to examine the behaviour of dynamic variables as the parameter values were changed.\\
+The proposed model is an attempt to describe significant dynamical characteristics of agricultural productions and terrestrial invertebrates in the presence of riparian vegetation that are important to know in order to maintain a balance between riparian vegetation and agricultural production while not overusing the land wiping off vegetation. Deforestation has a number of negative consequences, one of which is that it threatens the survival of terrestrial invertebrates that can enhance agricultural production. In this paper, different possible scenarios, that can exist in the interactive dynamics, are illustrated with hypothetical set of parameter values, due to unavailability of real time data. It may, however, be useful to ecologists for realistic temporal studies based on the numerous co-benefits of restoring and maintaining vegetated riparian buffers.
 %%%FIGURES
 \begin{figure}[bp!]
 	\centering
@@ -502,13 +519,16 @@ The values obtained from the model simulation provide just a general notion of t
 		\caption{Change in Terrestrial Invertebrates with time} \label{fig:time_vs_agriculture_r}
 	\end{subfigure}
 \quad
-              \begin{subfigure}[t]{0.45\textwidth}
+\hspace{0.08\textwidth}
+\end{figure}
+
+\FloatBarrier
+              \begin{figure}[bp!]
                  \centering
          \includegraphics[width=\textwidth]{rip_inv_agr_r.png}
 		\caption{Three dimensional change} \label{fig:rip_inv_agr_r}
-	\end{subfigure}
-\hspace{0.08\textwidth}
-\end{figure}
+	\end{figure}
+
 \FloatBarrier
 \begin{figure}[bp!]
 	\centering
@@ -531,13 +551,17 @@ The values obtained from the model simulation provide just a general notion of t
 		\caption{Change in Terrestrial Invertebrates with time} \label{fig:time_vs_agriculture_alpha}
 	\end{subfigure}
 \quad
-              \begin{subfigure}[t]{0.45\textwidth}
+\hspace{0.08\textwidth}
+\end{figure}
+
+\FloatBarrier
+              \begin{figure}[bp!]
                  \centering
          \includegraphics[width=\textwidth]{rip_inv_agr_alpha.png}
 		\caption{Three dimensional change} \label{fig:rip_inv_agr_alpha}
-	\end{subfigure}
-\hspace{0.08\textwidth}
-\end{figure}
+        \hspace{0.08\textwidth}
+              \end{figure}
+
 \FloatBarrier
 \begin{figure}[bp!]
 	\centering
@@ -560,13 +584,15 @@ The values obtained from the model simulation provide just a general notion of t
 		\caption{Change in Terrestrial Invertebrates with time} \label{fig:time_vs_agriculture_beta}
 	\end{subfigure}
 \quad
-              \begin{subfigure}[t]{0.45\textwidth}
+\hspace{0.08\textwidth}
+\end{figure}
+
+              \begin{figure}[bp!]
                  \centering
          \includegraphics[width=\textwidth]{rip_inv_agr_beta.png}
 		\caption{Three dimensional change} \label{fig:rip_inv_agr_beta}
-	\end{subfigure}
-\hspace{0.08\textwidth}
-\end{figure}
+	\end{figure}
+
 \FloatBarrier
 \begin{figure}[bp!]
 	\centering
@@ -589,13 +615,16 @@ The values obtained from the model simulation provide just a general notion of t
 		\caption{Change in Terrestrial Invertebrates with time} \label{fig:time_vs_agriculture_gamma}
 	\end{subfigure}
 \quad
-              \begin{subfigure}[t]{0.45\textwidth}
+\hspace{0.08\textwidth}
+\end{figure}
+\FloatBarrier
+
+              \begin{figure}[bp!]
                  \centering
          \includegraphics[width=\textwidth]{rip_inv_agr_gamma.png}
 		\caption{Three dimensional change} \label{fig:rip_inv_agr_gamma}
-	\end{subfigure}
-\hspace{0.08\textwidth}
-\end{figure}
+	\end{figure}
+
 \FloatBarrier
 \begin{figure}[bp!]
 	\centering
@@ -618,19 +647,48 @@ The values obtained from the model simulation provide just a general notion of t
 		\caption{Change in Terrestrial Invertebrates with time} \label{fig:time_vs_agriculture_delta}
 	\end{subfigure}
 \quad
-              \begin{subfigure}[t]{0.45\textwidth}
+\hspace{0.08\textwidth}
+\end{figure}
+
+\FloatBarrier
+              \begin{figure}[bp!]
                  \centering
          \includegraphics[width=\textwidth]{rip_inv_agr_delta.png}
 		\caption{Three dimensional change} \label{fig:rip_inv_agr_delta}
+	\end{figure}
+\FloatBarrier
+\begin{figure}[bp!]
+	\centering
+        \caption{Sensitivity Analysis of Parameters}\label{fig:sensitivity}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\centering
+	\includegraphics[width=\textwidth]{V_sen.png}
+		\caption{Sensitivity with respect to Riparian Vegetation} \label{fig:V_sen}
 	\end{subfigure}
 \hspace{0.08\textwidth}
+        \begin{subfigure}[t]{0.45\textwidth}
+                 \centering
+         \includegraphics[width=\textwidth]{I_sen.png}
+		\caption{Sensitivity with respect to Terrestrial Invertebrates} \label{fig:I_sen}
+	\end{subfigure}
+\vskip\baselineskip
+\begin{subfigure}[t]{0.45\textwidth}
+                 \centering
+         \includegraphics[width=\textwidth]{A_sen.png}
+		\caption{Sensitivity with respect to Agriculture} \label{fig:A_sen}
+	\end{subfigure}
+\quad
+\hspace{0.08\textwidth}
 \end{figure}
+
 %%%REFERENCES
 \begin{thebibliography}{99}
 \bibitem{pettit2007fire}
   Pettit, N. E., \& Naiman, R. J. (2007). Fire in the riparian zone: characteristics and ecological consequences. Ecosystems, 10(5), 673-687.
 \bibitem{popescu2021riparian}
   Popescu, C., Oprina-Pavelescu, M., Dinu, V., Cazacu, C., Burdon, F. J., Forio, M. A. E., ... \& Rîșnoveanu, G. (2021). Riparian vegetation structure influences terrestrial invertebrate communities in an agricultural landscape. Water, 13(2), 188.
+\bibitem{capron2020}
+  Capon, S. J. (2020). Riparian Ecosystems. https://doi.org/10.1016/B978-0-12-409548-9.11884-6
 \bibitem{hood2000}
   Hood, W. G., \& Naiman, R. J. (2000). Vulnerability of riparian zones to invasion by exotic vascular plants. Plant ecology, 148(1), 105-114.
 \bibitem{richardson2007}
@@ -669,6 +727,8 @@ Flory, E. A., \& Milner, A. M. (1999). Influence of riparian vegetation on inver
   You, X., Liu, J., \& Zhang, L. (2015). Ecological modeling of riparian vegetation under disturbances: a review. Ecological modelling, 318, 293-300.
 \bibitem{burdon2020}
   Burdon, F. J. (2020). Agriculture and mining contamination contribute to a productivity gradient driving cross-ecosystem associations between stream insects and riparian arachnids. In Contaminants and Ecological Subsidies (pp. 61-90). Springer, Cham.
+\bibitem{kominoski2011}
+  Kominoski, J. S., Marczak, L. B., \& Richardson, J. S. (2011). Riparian forest composition affects stream litter decomposition despite similar microbial and invertebrate communities. Ecology, 92(1), 151-159.
 \bibitem{edwards1996effect}
   Edwards, E. D., \& Huryn, A. D. (1996). Effect of riparian land use on contributions of terrestrial invertebrates to streams. Hydrobiologia, 337(1), 151-159.
 \bibitem{ramey2017terrestrial}
@@ -693,6 +753,8 @@ Flory, E. A., \& Milner, A. M. (1999). Influence of riparian vegetation on inver
   Hale JK (1969) Ordinary differential equations. Wiley-Interscience, New York.
 \bibitem{freedman1985}
   Freedman, H. I., \& So, J. H. (1985). Global stability and persistence of simple food chains. Mathematical biosciences, 76(1), 69-86.
+\bibitem{bortz2004}
+  Bortz, D. M., \& Nelson, P. W. (2004). Sensitivity analysis of a nonlinear lumped parameter model of HIV infection dynamics. Bulletin of mathematical biology, 66(5), 1009-1026.
 \end{thebibliography}
 %% TABLE FOR PARAMETER DEFINITION
 \begin{table}[htp!] \label{Table 1}
@@ -706,9 +768,9 @@ Flory, E. A., \& Milner, A. M. (1999). Influence of riparian vegetation on inver
 			\hline
 			$r$ & Instrinsic growth rate of vegetation\\
 			\hline
-			${K}$ & Carrying capacity of vegetation\\
+			$K$ & Carrying capacity of vegetation\\
 			\hline
-			${\alpha}$ & Depletion of vegetation due to enroachment for agricultural production\\
+			${\alpha}$ & Depletion of vegetation growth due to enroachment for agricultural production\\
 			\hline
 			${\beta}$ & Depletion rate of vegetation due to its use by invertebrates\\
 			\hline
@@ -716,13 +778,13 @@ Flory, E. A., \& Milner, A. M. (1999). Influence of riparian vegetation on inver
 		    \hline
 			${\gamma}$ & Intra-specific competition rate of invertebrates\\
 		    \hline
-			${\delta}$ & Depletion rate of invertebrates due to agriculture\\
+			${\delta}$ & Depletion rate of invertebrates due to agricultural production\\
 		    \hline
 			${s}$ & Intrinsic growth rate of agricultural production\\
 			\hline
 			${L}$ & Carrying capacity of agricultural production\\
 			\hline
-			${\nu}$ & Growth of agriculture due to invertebrate\\
+			${\nu}$ & Growth of agricultural production due to invertebrate\\
 			\hline			
 		\end{tabular}\label{Table 1}
 	\end{center}
