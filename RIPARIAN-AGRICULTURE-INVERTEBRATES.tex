@@ -1,6 +1,6 @@
 \documentclass[12pt]{article}
 \usepackage{graphicx}
-\usepackage{color}
+\usepackage{xcolor}
 \usepackage{soul}
 \usepackage[section]{placeins}
 \usepackage{amsmath,amssymb,mathrsfs,amsthm}
@@ -38,8 +38,6 @@
 \makeatletter
 \renewcommand{\footnotesep}{3.5mm}
 \onehalfspace
-\date{}
-
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}{Lemma}[section]
 \newtheorem{corollary}{Corollary}[section]
@@ -69,14 +67,22 @@
 \maketitle
 \vspace{-1cm}
 \begin{abstract}
-Excessive landuse owing to agricultural methods has not only resulted in riparian plant depletion, but has also worsened the habitat of terrestrial invertebrates living in riparian ecosystems that encompasses river banks, floodplains and wetlands. With these dynamic interactions in mind, a nonlinear model is developed using a set of differential equations. The model, which includes riparian vegetation, terrestrial invertebrates, and agricultural production as system variables, is based on the notion that agricultural activities constitute one of the most intensive forms of anthropogenic disturbance. The generated model is examined mathematically for qualitative aspects of its solutions at equilibrium, such as existence and stabilities. The model study demonstrates the circumstances under which agricultural production, riparian vegetation, and terrestrial invertebrates can coexist to create a stable system. These intuitive conclusions are supported by quantitative data in which the sensitivity of different model parameters to model outcomes is studied using the differential sensitivity analysis approach. As a result, it is advised that agricultural developments be controlled by the execution of government plans, which should include monitoring unlawful encroachment of wooded area near riparian habitats.
+Excessive land-use owing to agricultural methods has not only resulted in riparian plant depletion, but has also worsened the habitat of terrestrial invertebrates living in riparian ecosystems that encompasses river banks, floodplains and wetlands. With these dynamic interactions in mind, a nonlinear model is developed using a set of differential equations. The model, which includes riparian vegetation, terrestrial invertebrates, and agricultural production as system variables, is based on the notion that agricultural activities constitute one of the most intensive forms of anthropogenic disturbance. The generated model is examined mathematically for qualitative aspects of its solutions at equilibrium, such as existence and stabilities. The model study demonstrates the circumstances under which agricultural production, riparian vegetation, and terrestrial invertebrates can coexist to create a stable system. These intuitive conclusions are supported by quantitative data in which the sensitivity of different model parameters to model outcomes is studied using the differential sensitivity analysis approach. As a result, it is advised that agricultural developments be controlled by the execution of government plans, which should include monitoring unlawful encroachment of wooded area near riparian habitats.
 \end{abstract}
 
 \section{Introduction}
-Riparian circumscribe diverse ecosystems that include river banks, floodplains, and wetlands. In other words, this ecosystem supports ecologically unique and diverse groups because it represents wetter, colder, and diversified habitats than nearby highland areas \cite{pettit2007fire}. In particular, these biodiverse transitional areas connect aquatic and terrestrial systems \cite{popescu2021riparian}, subsidize food webs and habitats to aquatic, amphibious and terrestrial organisms \cite{capron2020}. Riparian vegetation has an impact on a number of crucial ecological functions related to habitats, including food provision, temperature regulation of stream water via evapotranspiration and shading, provision of a buffer zone that filters sediments and controls nutrients, and stream bank stabilisation (\cite{hood2000};\cite{richardson2007}). For terrestrial invertebrates, riparian buffers are important habitat patches as well because they supply not only food but also spots for web construction and snare hunting, life-stage microhabitats and refuge, and overwintering and egg-laying sites \cite{popescu2021riparian}.\\ 
-Riparian buffers, which are often uncultivated, vegetated regions next to streams and rivers, can play an important role in protecting the riparian networks in altered environments\cite{burdon2020assessing}. Such buffers may be beneficial to agricultural output because to their increased biodiversity and community dynamics \cite{forio2020small}. Many invertebrates that operate as biocontrol agents by feeding on plant or animal agricultural pests like those of carabid and staphylinid beetles \cite{andersen2000long} or that aid in crop pollination for example dipterans - a type of winged insects \cite{ssymank2008pollinating}, need on riparian buffers to complete their life-cycles.\\
-Unfortunately, in agricultural catchments, the riparian zones are frequently severely damaged. At various geographical scales, landuse change, deforestation of riparian trees or vegetation, overgrazing, pesticide inputs, and nutrients from agricultural sources all pose a danger to riparian biodiversity and ecosystem services \cite{burdon2013habitat}. There are several studies conducted at various catchment level (\cite{cesarini2022riparian};\cite{alemu2018identifying};\cite{heartsill2003riparian};\cite{corbacho2003patterns};\cite{schlosser1981riparian}) to determine various affects of intense human disturbances on riparian vegetion. As a result, riparian zone protection and enhancement are frequently considered as the initial steps toward correcting the effects of agricultural productivity.\\
+Riparian \textcolor{blue} {zone} circumscribe \textcolor{blue}{various} ecosystems that include river banks, flood-plains, and wetlands. \textcolor{blue}{Riparian supports} ecologically unique and diverse groups because it represents wetter, colder, and \textcolor{blue}{varied} habitats than nearby highland areas \cite{pettit2007fire}. In particular, these bio - diverse transitional areas connect aquatic and terrestrial systems \cite{popescu2021riparian}, subsidize food webs and habitats to aquatic, amphibious and terrestrial organisms \cite{capron2020}. \textcolor{blue}{The vegetation in riparian zone, referred as riparian vegetation, has an impact on a number of crucial ecological functions related to habitats including food provision, temperature modulation of stream water, filtration of sediments, regulation of nutrients and stabilization of stream bank} (\cite{hood2000};\cite{richardson2007}).\\
+\textcolor{blue}{Riparian buffers, which are often uncultivated, vegetated regions next to streams and rivers, can play an important role in protecting the riparian networks in altered environment \cite{burdon2020assessing}}. \textcolor{blue}{These riparian buffers are dominant habitat patches for terrestrial invertebrates because they supply not only food but also spots for web construction, snare hunting, life-stage micro-habitats, overwintering and egg-laying sites \cite{popescu2021riparian}. Not only to terrestrial invertebrates, but such buffers may be beneficial to agricultural outputs as well due to their increased biodiversity and community dynamics \cite{forio2020small}.} \textcolor{magenta}{Buffer habitat may boost agricultural yields and production costs through pollination, insect control, decomposition, and water providing services \cite{luke2019}.} \textcolor{blue}{Invertebrates that operate as bio-control agents by feeding on plant or animal agricultural pests like those of carabid and staphylinid beetles \cite{andersen2000long} or that aid in crop pollination for example dipterans - a type of winged insects \cite{ssymank2008pollinating}, need riparian buffers to complete their life-cycles.} \textcolor{magenta}{Phosphorus and nitrogen are vital for crop productivity since they are structural components in plant cells, which is why they are used in fertilisers \cite{sharma2017}. However, nutrient enrichment has a negative impact on aquatic ecosystems and the use of water for drinking, industry, agriculture, leisure, and other activities \cite{carpenter1998}. Vegetated buffer zones positioned along streams and in the upland areas can reduce phosphorus and nitrogen loading in surface water by minimising erosion or trapping particles in surface runoff \cite{vought1995}.} \\
+%Riparian zone circumscribe various ecosystems that include river banks, floodplains, and wetlands. Such ecosystem supports ecologically unique and diverse groups because it represents wetter, colder, and varied habitats than nearby highland areas \cite{pettit2007fire}. In particular, these biodiverse transitional areas connect aquatic and terrestrial systems \cite{popescu2021riparian}, subsidize food webs and habitats to aquatic, amphibious and terrestrial organisms \cite{capron2020}. Riparian vegetation has an impact on a number of crucial ecological functions related to habitats, including food provision, temperature regulation of stream water via evapotranspiration and shading, provision of a buffer zone that filters sediments and controls nutrients, and stream bank stabilisation (\cite{hood2000};\cite{richardson2007}). For terrestrial invertebrates, riparian buffers are important habitat patches as well because they supply not only food but also spots for web construction and snare hunting, life-stage microhabitats and refuge, and overwintering and egg-laying sites \cite{popescu2021riparian}.\\ %Riparian buffers, which are often uncultivated, vegetated regions next to streams and rivers, can play an important role in protecting the riparian networks in altered environments\cite{burdon2020assessing}. Such buffers may be beneficial to agricultural output because to their increased biodiversity and community dynamics \cite{forio2020small}. Many invertebrates that operate as biocontrol agents by feeding on plant or animal agricultural pests like those of carabid and staphylinid beetles \cite{andersen2000long} or that aid in crop pollination for example dipterans - a type of winged insects \cite{ssymank2008pollinating}, need on riparian buffers to complete their life-cycles.\\
+%Intensive agriculture causes the excessive application of agrochemicals. Application of pesticides, herbicides, and fertilizers on agricultural felds threatens the ecological functions
+%in riparian zones (Gregory et al. 1991; Nóbrega et al. 2020).
+%Intensive agricultural activities in riparian zones
+%signifcantly alter the composition, diversity and richness of native species of riparian forests (Asanok et al. 2017). Intensive agriculture causes the excessive application of agrochemicals. Application of pesticides, herbicides, and fertilizers on agricultural fields threatens the ecological functions
+%in riparian zones (Gregory et al. 1991; Nóbrega et al. 2020).
+\textcolor{blue}{Unfortunately, riparian zones, which are considered to be one of the valuable ecosystems, are getting severely damaged due to extreme agricultural activities. At various geographical scales, land use change, deforestation of trees or vegetation, overgrazing, pesticide inputs, and nutrients from agricultural sources all pose a danger to riparian biodiversity and ecosystem services \cite{burdon2013habitat}. There are several studies conducted at various catchment levels to determine various affects of intense agricultural disturbances on riparian vegetation (\cite{cesarini2022riparian};\cite{alemu2018identifying};\cite{heartsill2003riparian};\cite{corbacho2003patterns};\cite{schlosser1981riparian}). As a result, riparian zone protection and enhancement are frequently considered as the initial steps toward correcting the ill effects of agricultural productivity.}\\
+%Unfortunately, in agricultural catchments, the riparian zones are frequently severely damaged. At various geographical scales, land use change, deforestation of trees or vegetation, overgrazing, pesticide inputs, and nutrients from agricultural sources all pose a danger to riparian biodiversity and ecosystem services \cite{burdon2013habitat}. There are several studies conducted at various catchment level to determine various affects of intense human disturbances on riparian vegetation (\cite{cesarini2022riparian};\cite{alemu2018identifying};\cite{heartsill2003riparian};\cite{corbacho2003patterns};\cite{schlosser1981riparian}). As a result, riparian zone protection and enhancement are frequently considered as the initial steps toward correcting the effects of agricultural productivity.\\
 Despite the fact that riparian buffers are recognised as important elements for preserving ecological balance, there are still voids in our understanding. In recent decades, integrated ecological studies that include invertebrates, have investigated the impact of buffer features (\cite{forio2020small};\cite{flory1999};\cite{kawaguchi2001}). However, models addressing the interactions of terrestrial invertebrate communities with that of riparian vegetation are relatively rare. Few mathematical analyses based on invertebrates in riparian environments (\cite{steward2022};\cite{wipfli1997};\cite{sabo2002};\cite{you2015};\cite{burdon2020}). In this context, our nonlinear modelling focuses on how wooded riparian buffers have temporal effects on riparian invertebrate groups in a agrarian river basin as that of Arges River Basin situated in Romania \cite{popescu2021riparian}. Due to a lack of sufficient temporal data, we developed a dimensionless model that may be fitted in any dataset when such investigations are undertaken by ecologists in the future.\\
+ Agricultural productivity and riparian vegetation are both crucial components for people since they supply a variety of resources that humans require in order to exist. However, landuse near heavily sedimented regions is growing as a result of rising population and demand. Agricultural productivity, among many other anthropogenic disturbances, is a source of worry for terrestrial invertebrates that live in such places. Forested riparian buffers promote more invertebrate diversity and more unique ecosystems in general \cite{popescu2021riparian}. Their habitat is completely reliant on riparian vegetation since it not only provides a source of food but also serves as a location for a variety of activities such as ambush hunting, that are essential to their existence.
 \vspace{-1cm}
 \section{Mathematical Model Formulation}
 A mathematical model is presented that governs the dynamics of riparian vegetation and terrestrial invertebrates interactions, when both grow together in a riparian landscape under the influence of anthroprogenic disturbance that is, agricultural production. In such a riparian ecosystem, if it is considered that $V(t)$ and $I(t)$ denote the riparian vegetation and terrestrial invertebrates respectively in the presence of agricultural productivity $A(t)$ at any time $t>0$. Variation in riparian canopy composition influences nearby trophic levels in diverse ways, which ultimately affects the fluxes of energy and nutrients that link biodiversity and functioning in surrounding ecosystems \cite{kominoski2011}. Due to such physical and chemical properties, as well as changes in terrestrial resource subsidies, the mix of forest tree species can impact the structure and functioning of terrestrial invertebrates. Because of this intricacy, other interactions of invertebrates with the riparian vegetation are not considered in this model. We reasoned that invertebrates interact with riparian vegetation as they require forest resources to survive which should be considered as a negative influence on growth of riparian vegetation. Many of these invertebrates are beneficial to agricultural production because they suppress pests and act as soil temperature change sensors, which contributes to the improvement of agricultural yield. Keeping these situations in mind, the interactive dynamics amongst them can be represented in the form of following differential equation system:
@@ -366,7 +372,6 @@ b_3 &=r\tilde V \gamma \tilde I \tilde A + r \tilde V \delta \tilde I \tilde A +
 &=\tilde V \tilde I \tilde A (r\gamma + r\delta + \alpha \gamma s \tilde A + \alpha \delta \tilde A + \theta \beta^2 + \alpha \tilde V \theta \beta)
 \end{align}
 Using the Routh Hurwitz criterion, we must establish the co-existence equilibrium $E_3$ to be locally asymptotically stable by proving $b_1>0$, $b_3>0$ with $b_1b_2-b_3>0$. From the above equations \eqref{sec3:e34} we can see that $b_1>0$ and $b_3>0$ are always true for positive $\tilde V$, $\tilde I$ and $\tilde A$. To examine the third requirement of the Routh Hurwitz criteria, we shall solve for situations when viable coexistence equilibrium is determined in Theorem \ref{Theorem 3.3}:
-
 \begin{equation}\label{sec3:e35}
 \begin{split}
 b_1b_2-b_3=\alpha r \tilde V^2 \tilde A \gamma \tilde I + \alpha \tilde V^2 \tilde A^2 r + \alpha^2 \tilde V^2 \tilde A^3 + \alpha^2\tilde V^2\tilde A^2\gamma \tilde I + \alpha \tilde V \tilde A^2 + \alpha \tilde V^2 \tilde A \theta \beta^2\tilde I \\
@@ -377,7 +382,6 @@ r\tilde V \tilde A^2 + \alpha \tilde V\tilde A^3+\tilde V\tilde A\gamma \tilde I
 \end{split}
 \end{equation}
 \end{enumerate}
-
 From the above stated results, we can derive the sufficient condition for stability as:
 \begin{equation}\label{sec3:e36}
 \beta \geq 1
@@ -500,7 +504,6 @@ The proposed model is an attempt to describe significant dynamical characteristi
 %%%FIGURES
 \begin{figure}[bp!]
 	\centering
-        \caption{Variation in parameter r}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\centering
 	\includegraphics[width=\textwidth]{time_vs_riparian_r.png}
@@ -520,6 +523,7 @@ The proposed model is an attempt to describe significant dynamical characteristi
 	\end{subfigure}
 \quad
 \hspace{0.08\textwidth}
+\caption{Variation in parameter r}
 \end{figure}
 
 \FloatBarrier
@@ -532,7 +536,6 @@ The proposed model is an attempt to describe significant dynamical characteristi
 \FloatBarrier
 \begin{figure}[bp!]
 	\centering
-        \caption{Variation in parameter $\alpha$}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\centering
 	\includegraphics[width=\textwidth]{time_vs_riparian_alpha.png}
@@ -552,6 +555,7 @@ The proposed model is an attempt to describe significant dynamical characteristi
 	\end{subfigure}
 \quad
 \hspace{0.08\textwidth}
+\caption{Variation in parameter $\alpha$}
 \end{figure}
 
 \FloatBarrier
@@ -565,7 +569,6 @@ The proposed model is an attempt to describe significant dynamical characteristi
 \FloatBarrier
 \begin{figure}[bp!]
 	\centering
-        \caption{Variation in parameter $\beta$}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\centering
 	\includegraphics[width=\textwidth]{time_vs_riparian_beta.png}
@@ -585,6 +588,7 @@ The proposed model is an attempt to describe significant dynamical characteristi
 	\end{subfigure}
 \quad
 \hspace{0.08\textwidth}
+\caption{Variation in parameter $\beta$}
 \end{figure}
 
               \begin{figure}[bp!]
@@ -596,7 +600,6 @@ The proposed model is an attempt to describe significant dynamical characteristi
 \FloatBarrier
 \begin{figure}[bp!]
 	\centering
-        \caption{Variation in parameter $\gamma$}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\centering
 	\includegraphics[width=\textwidth]{time_vs_riparian_gamma.png}
@@ -616,6 +619,7 @@ The proposed model is an attempt to describe significant dynamical characteristi
 	\end{subfigure}
 \quad
 \hspace{0.08\textwidth}
+\caption{Variation in parameter $\gamma$}
 \end{figure}
 \FloatBarrier
 
@@ -628,7 +632,6 @@ The proposed model is an attempt to describe significant dynamical characteristi
 \FloatBarrier
 \begin{figure}[bp!]
 	\centering
-        \caption{Variation in parameter $\delta$}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\centering
 	\includegraphics[width=\textwidth]{time_vs_riparian_delta.png}
@@ -648,6 +651,7 @@ The proposed model is an attempt to describe significant dynamical characteristi
 	\end{subfigure}
 \quad
 \hspace{0.08\textwidth}
+\caption{Variation in parameter $\delta$}
 \end{figure}
 
 \FloatBarrier
@@ -659,7 +663,6 @@ The proposed model is an attempt to describe significant dynamical characteristi
 \FloatBarrier
 \begin{figure}[bp!]
 	\centering
-        \caption{Sensitivity Analysis of Parameters}\label{fig:sensitivity}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\centering
 	\includegraphics[width=\textwidth]{V_sen.png}
@@ -679,6 +682,7 @@ The proposed model is an attempt to describe significant dynamical characteristi
 	\end{subfigure}
 \quad
 \hspace{0.08\textwidth}
+\caption{Sensitivity Analysis of Parameters}\label{fig:sensitivity}
 \end{figure}
 
 %%%REFERENCES
@@ -699,12 +703,19 @@ The proposed model is an attempt to describe significant dynamical characteristi
   Cesarini, G., \& Scalici, M. (2022). Riparian vegetation as a trap for plastic litter. Environmental Pollution, 292, 118410.
 \bibitem{alemu2018identifying}
   Alemu, T., Weyuma, T., Alemayehu, E., \& Ambelu, A. (2018). Identifying riparian vegetation as indicator of stream water quality in the Gilgel Gibe catchment, southwestern Ethiopia. Ecohydrology, 11(1), e1915.
-\bibitem{ssymank2008pollinating}
-  Ssymank, A., Kearns, C. A., Pape, T., \& Thompson, F. C. (2008). Pollinating flies (Diptera): a major contribution to plant diversity and agricultural production. Biodiversity, 9(1-2), 86-89.
-\bibitem{forio2020small}
+  \bibitem{forio2020small}
   Forio, M. A. E., De Troyer, N., Lock, K., Witing, F., Baert, L., Saeyer, N. D., ... \& Goethals, P. (2020). Small patches of riparian woody vegetation enhance biodiversity of invertebrates. Water, 12(11), 3070.
+  \bibitem{luke2019}
+  Luke, S. H., Slade, E. M., Gray, C. L., Annammala, K. V., Drewer, J., Williamson, J., ... \& Struebig, M. J. (2019). Riparian buffers in tropical agriculture: Scientific support, effectiveness and directions for policy. Journal of Applied Ecology, 56(1), 85-92.
 \bibitem{andersen2000long}
   Andersen, A., \& Eltun, R. (2000). Long‐term developments in the carabid and staphylinid (Col., CArabidae and Staphylinidae) fauna during conversion from conventional to bilogivcal farming. Journal of Applied Entomology, 124(1), 51-56.
+  \bibitem{ssymank2008pollinating}
+  Ssymank, A., Kearns, C. A., Pape, T., \& Thompson, F. C. (2008). Pollinating flies (Diptera): a major contribution to plant diversity and agricultural production. Biodiversity, 9(1-2), 86-89.
+  \bibitem{sharma2017} Sharma, L. K., Zaeen, A. A., Bali, S. K., \& Dwyer, J. D. (2017). Improving nitrogen and phosphorus efficiency for optimal plant growth and yield. New Vision in Plant Science, 13-40.
+  \bibitem{carpenter1998}
+  Carpenter, S. R., Caraco, N. F., Correll, D. L., Howarth, R. W., Sharpley, A. N., \& Smith, V. H. (1998). Nonpoint pollution of surface waters with phosphorus and nitrogen. Ecological applications, 8(3), 559-568.
+  \bibitem{vought1995}
+  Vought, L. B. M., Pinay, G., Fuglsang, A., \& Ruffinoni, C. (1995). Structure and function of buffer strips from a water quality perspective in agricultural landscapes. Landscape and urban planning, 31(1-3), 323-331.
 \bibitem{burdon2013habitat}
   Burdon, F. J., McIntosh, A. R., \& Harding, J. S. (2013). Habitat loss drives threshold response of benthic invertebrate communities to deposited sediment in agricultural streams. Ecological Applications, 23(5), 1036-1047.
 \bibitem{steward2022}
