@@ -8,17 +8,17 @@
 \usepackage[nameinlink,noabbrev]{cleveref}
 \usepackage{multicol}
 \usepackage{pdfcolmk}
-\usepackage[nice]{nicefrac}
-\usepackage{latexsym}
-\usepackage{dsfont}
+%\usepackage[nice]{nicefrac}
+%\usepackage{latexsym}
+%\usepackage{dsfont}
 \usepackage{setspace}
 \usepackage[a4paper, tmargin=1in, bmargin=1in, lmargin=1in, rmargin=1in, headheight=13.6 pt]{geometry}
 \usepackage[sort&compress,numbers]{natbib}
 \usepackage[font=small,labelfont=bf,labelsep=space]{caption}
-\usepackage{fancyhdr}
+%\usepackage{fancyhdr}
 \usepackage{titlesec}
 \usepackage{lipsum}
-\usepackage{caption}
+%\usepackage{caption}
 \usepackage{subcaption}
 \usepackage{enumerate}
 \usepackage{multirow}
@@ -29,10 +29,6 @@
 \titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
 \titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
 \titlespacing\subsubsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
-\captionsetup{
-  figurename=Figure,
-  tablename=Table
-}
 \parindent 0 pc
 \parskip 7.5pt
 \makeatletter
@@ -67,7 +63,7 @@
 \maketitle
 \vspace{-1cm}
 \begin{abstract}
-Excessive land-use owing to agricultural methods has not only resulted in riparian plant depletion, but has also worsened the habitat of terrestrial invertebrates living in riparian ecosystems that encompasses river banks, floodplains and wetlands. With these dynamic interactions in mind, a nonlinear model is developed using a set of differential equations. The model, which includes riparian vegetation, terrestrial invertebrates, and agricultural production as system variables, is based on the notion that agricultural activities constitute one of the most intensive forms of anthropogenic disturbance. The generated model is examined mathematically for qualitative aspects of its solutions at equilibrium, such as existence and stabilities. The model study demonstrates the circumstances under which agricultural production, riparian vegetation, and terrestrial invertebrates can coexist to create a stable system. These intuitive conclusions are supported by quantitative data in which the sensitivity of different model parameters to model outcomes is studied using the differential sensitivity analysis approach. As a result, it is advised that agricultural developments be controlled by the execution of government plans, which should include monitoring unlawful encroachment of wooded area near riparian habitats. 
+Excessive land-use owing to agricultural methods has not only resulted in riparian plant depletion, but has also worsened the habitat of terrestrial invertebrates living in riparian ecosystems that encompasses river banks, floodplains and wetlands. With these dynamic interactions in mind, a nonlinear model is developed using a set of differential equations. The model, which includes riparian vegetation, terrestrial invertebrates, and agricultural production as system variables, is based on the notion that agricultural activities constitute one of the most intensive forms of anthropogenic disturbance. The generated model is examined mathematically for qualitative aspects of its solutions at equilibrium, such as existence and stabilities. The model study demonstrates the circumstances under which agricultural production, riparian vegetation, and terrestrial invertebrates can coexist to create a stable system. These intuitive conclusions are supported by quantitative data in which the sensitivity of different model parameters to model outcomes is studied using the differential sensitivity analysis approach. As a result, it is advised that agricultural developments be controlled by the execution of government plans, which should include monitoring unlawful encroachment of wooded area near riparian habitats.
 \end{abstract}
 
 \section{Introduction}
@@ -261,22 +257,21 @@ Putting the value of $\tilde V_1$ from \eqref{sec3:e20} in the condition \eqref{
 \theta \beta \bigg(  \frac{\tilde b + \sqrt{\tilde b^2 - 4\tilde a \tilde c}}{2 \tilde a} \bigg) &> \delta 
 %^\theta \beta \tilde b + \theta \beta \sqrt{\tilde b^2-4\tilde a \tilde c} &> 2\tilde a \delta 
 \end{align}
-Plugging the values of $\tilde b$, $\tilde a$ and $\tilde c$ from \eqref{sec3:e19} and simplifying, we get:
-\begin{equation}\label{sec3:e24}
-2r \theta \beta + \delta \theta \beta^2 - r\delta -\alpha \delta>0
+Plugging the values of $\tilde b$, $\tilde a$ and $\tilde c$ from \eqref{sec3:e19} and simplifying, the following condition is derived for the feasibility of coexistence equilibrium:
+\begin{equation} \label{sec3:e24}
+\theta \beta > \bigg(1+\frac{\alpha}{r}\bigg)\delta
 \end{equation}
 %We will get:
-\begin{equation}\label{sec3:e25}
-2r + \delta \beta >\frac{\bigg(r+a\bigg)\delta}{\theta \beta}
-\end{equation}
-that is equivalent to the following two conditions,
-\begin{equation}\label{sec3:e26}
-\delta < 2 \theta \beta
-\end{equation}
-and,
-\begin{equation}\label{sec3:e27}
-\alpha < \theta \beta^2
-\end{equation}
+%2r + \delta \beta >\frac{\bigg(r+a\bigg)\delta}{\theta \beta}
+%\end{equation}
+%that is equivalent to the following two conditions,
+%\begin{equation}\label{sec3:e26}
+%\delta < 2 \theta \beta
+%\end{equation}
+%and,
+%\begin{equation}\label{sec3:e27}
+%\alpha < \theta \beta^2
+%\end{equation}
 \end{enumerate}
 As a result of the preceding explanation, the following theorem about equilibrium states and their existences is developed.
 \begin{theorem}\label{Theorem 3.3}
@@ -288,7 +283,7 @@ For the model system \eqref{sec2:e2},
 %\begin{enumerate}
 %\item $\frac{\gamma}{\theta \beta} + \frac{K \beta}{r} >0$
 %\end{enumerate}
-\item Coexistence equilibrium  $E_3(\tilde V, \tilde I, \tilde A)$ is feasible if  the following conditions hold true:
+\item Coexistence equilibrium  $E_3(\tilde V, \tilde I, \tilde A)$ is feasible if $\theta \beta > \bigg(1+\frac{\alpha}{r}\bigg)\delta$.
 \begin{enumerate}
      \item $\delta < 2 \theta \beta$.
      \item $\alpha < \theta \beta^2$.
@@ -403,14 +398,23 @@ Here, $b_1b_2-b_3>0$, provided
 \begin{align}\label{sec3:e36}
 \beta &\geq 1
 \end{align} 
-Hence, this obtained condition is the sufficient condition for the system to exhibit local asymptotic stable behavior around coexistence equilibrium $E_3$.
-\hl{Also, it can be noted that $\tilde b_1\tilde b_2-\tilde b_3>0$ is always true in circumstances of viable coexistence equilibrium due to the presence of $\beta^2$ in equation} \eqref{sec3:e35}. As a result, coexistence equilibrium is locally asymptotically stable.
+However, if $0< \beta <1$, then $b_1b_2-b_3>0$, if the following condition holds:
+\begin{align}\label{sec3:e36a}
+\gamma &\geq \frac{\theta \beta}{2r}
+\end{align} 
+Hence, these obtained inequalities are the sufficient conditions for the system to exhibit local asymptotic stable behavior around feasible coexistence equilibrium $E_3$ \eqref{sec3:e24}.
+%\hl{Also, it can be noted that $\tilde b_1\tilde b_2-\tilde b_3>0$ is always true in circumstances of viable coexistence equilibrium due to the presence of $\beta^2$ in equation} \eqref{sec3:e35}. As a result, coexistence equilibrium is locally asymptotically stable.
 In combined form, the following theorem expresses the local stability behaviors of the system around different equilibria:
 \begin{theorem}\label{Theorem 3.4}
 The model system \eqref{sec2:e2} exhibits
 \begin{enumerate}[i)]
 \item Unstable behaviors around trivial equilibrium $E_0(0,0,0)$, riparian vegetation and terrestrial invertebrates - free equilibrium $E_1(0,0,1)$ and agricultural production - free equilibrium $E_2(\hat V,\hat I,0)$ without any condition.
-\item Local asymptotic stable behavior around feasible coexistence equilibrium $E_3(\tilde V,\tilde I,\tilde A)$, if $\beta\geq 1$.
+\item Local asymptotic stable behavior around feasible coexistence equilibrium $E_3(\tilde V,\tilde I,\tilde A)$, 
+\begin{enumerate}
+\item[a).] if $\beta\geq 1$
+\item[b).] if $0<\beta<1$, then $\gamma \geq \frac{\theta \beta}{2r}$.
+\end{enumerate}
+%if $\beta\geq 1$ and if $\beta\neq 1$, then $\gamma &\geq \frac{\theta \beta}{2r}$.
 \end{enumerate}
  \end{theorem}
 %\item Riparian vegetation and terrestrial invertebrates - free equilibrium $E_1(0,0,1)$ is always unstable.
@@ -444,7 +448,7 @@ where $m_1,m_2$ are positive constants. Now, differentiating $\mathbb P$ with re
 $\frac{d \mathbb P}{dt}$ can also be written as:
 \begin{equation}\label{sec3:e41}
 \begin{split}
-\frac{d\mathbb P}{dt} = -(r+\alpha A)(V-V^*)^2 - m_1\gamma(I-I^*)^2-m_2(A-A^*)-\alpha V^*(A-A^*)(V-V^*)\\ - (\beta-m_1\theta\beta)(V-V^*)(I-I^*) - (m_1\delta-m_2)(A-A^*)(I-I^*)
+\frac{d\mathbb P}{dt} = -(r+\alpha A)(V-\tilde V)^2 - m_1\gamma(I-\tilde I)^2-m_2(A-\tilde A)-\alpha \tilde V(A-\tilde A)(V-\tilde V)\\ - (\beta-m_1\theta\beta)(V-\tilde V)(I-\tilde I) - (m_1\delta-m_2)(A-\tilde A)(I-\tilde I)
 \end{split}
 \end{equation}
 Choosing $m_1 = \frac{1}{\theta}$ and $m_2 = \frac{\delta}{\theta}$, the above $\frac{d \mathbb P}{dt}$ reduces into
@@ -460,7 +464,7 @@ Choosing $m_1 = \frac{1}{\theta}$ and $m_2 = \frac{\delta}{\theta}$, the above $
 With,
 \begin{equation}\label{sec3:e42}
 \begin{split}
-\frac{d\mathbb P}{dt} = -(r+\alpha A)(V-V^*)^2 - m_1\gamma(I-I^*)^2 - m_2(A-A^*)-\alpha V^*(A-A^*)(V-V^*)
+\frac{d\mathbb P}{dt} = -(r+\alpha A)(V-\tilde V)^2 - m_1\gamma(I-\tilde I)^2 - m_2(A-\tilde A)-\alpha \tilde V(A-\tilde A)(V-\tilde V)
 \end{split}
 \end{equation}
 For negative - definiteness of $\frac{d \mathbb P}{dt}$, the following inequality is to hold true for the system to exhibit global asymptotic stable behavior around coexistence equilibrium
@@ -478,18 +482,26 @@ Hence, the following theorem on global asymptotic stability
 The model system exhibits global asymptotic stable behavior around coexistence equilibrium $E_3(\tilde V,\tilde I,\tilde A)$, if $\alpha^2<4\frac{\delta r}{\theta}$.
 \end{theorem}
 \section{Numerical Simulation}
-In addition to qualitative research, numerical simulation appears to be helpful for substantiating analytical conclusions and better comprehending the dynamics of the system through graphical representations. In this manner, some findings are illustrated using MATLAB to numerically simulate the model \eqref{sec2:e2}. For numeric simulations the following numerical values of dimensionless parameters are selected:
-\begin{equation}
-r=0.9, \alpha=.005, \beta=1.5, \theta=.9, \gamma=.0005, \delta=.003
+In addition to qualitative features, numerical simulation also appears to be helpful for substantiating and comprehending analytical conclusions. It gives the idea about behavioral patterns that would be exhibited by the dynamical model through graphical representations. In this direction, some findings are illustrated in this section by simulating the model \eqref{sec2:e2} numerically. For this purpose, the following numerical values of dimensionless parameters are selected:
+\begin{equation}\label{parameters}
+r = 0.9, \alpha=0.005, \beta=1.5, \theta=0.9, \gamma=0.0005, \delta=0.003
 \end{equation}
-To demonstrate the behaviour of the model, we investigated each parameteric value mentioned in Table \ref{Table 1}, while maintaining the others constant. We assumed that the starting values of $V$, $I$, and $A$ as $0.2, 0.3$, and $0.5$, respectively. The values investigated here all meet the Lyapunov stability requirement, and the remaining observations are as follows:
-\begin{description}
-\item[$\bullet$] We experimented with three alternative values of the parameter $r$. The parameter $r$ is assumed to have a base value of $0.9$. We observed periodic activity in the graph at this point, and convergence occurs when we extend the time duration. However, at smaller values, such as $0.009$ at roughly time $1000$, we can observe that the convergence is achieved without much periodicity, as seen in \cref{fig:time_vs_riparian_r}, \cref{fig:time_vs_invertebrates_r}, \cref{fig:time_vs_agriculture_r} and \cref{fig:rip_inv_agr_r}. Even though there is periodicity in the graph for larger values of $r$, such as $1.9$, the convergence occurs at a comparable rate to that of lesser values of $r$. The majority of complex eigenvalues are negative which exhibits stability.\\
-\item[$\bullet$] For the parameter $\alpha$, we chose a base value of $0.005$, which exhibits periodicity comparable to that of $r$, where convergence occurs over a longer time period. As shown in  \cref{fig:time_vs_riparian_alpha}, \cref{fig:time_vs_invertebrates_alpha}, \cref{fig:time_vs_agriculture_alpha} and \cref{fig:rip_inv_agr_alpha}, smaller values of $\alpha$ behave similarly to the conventional value. It is then observed that convergence is achieved without any periodicity for larger values and complex eigenvalues shows stability for all the points we have studied.\\
-\item[$\bullet$] We chose $1.5$ as the standard value for $\beta$ since in equation \eqref{sec3:e36} requires us to consider values higher than or equal to $1$. The values $1$ and $1.5$ exhibit similar behaviour, but with a minor difference in frequency or periodicity. From \cref{fig:time_vs_riparian_beta}, \cref{fig:time_vs_invertebrates_beta}, \cref{fig:time_vs_agriculture_beta} and \cref{fig:rip_inv_agr_beta}, we may conclude that for larger values of $\beta$, convergence occurs after a longer period. However, with decreasing values such as $0.05$, the model becomes unstable as the imaginary part of the eigenvalues vanish, leaving behind a combination of real negative and positive real numbers.\\
-\item[$\bullet$] In the case of $\gamma$, we chose $0.0005$ as the standard value because numbers less than this exhibit identical behaviour with a minor shift in periodicity. As demonstrated in \cref{fig:time_vs_riparian_gamma}, \cref{fig:time_vs_invertebrates_gamma}, \cref{fig:time_vs_agriculture_gamma} and \cref{fig:rip_inv_agr_gamma}, for values greater than the standard one, the periodicity reduces and convergence occurs faster. All of the numbers we chose like $0.05$, as well as those far higher, such as $40.0005$, demonstrate stability with negative complex eigenvalues.\\
-\item[$\bullet$] We have considered standard value for $\delta$ as $0.003$ which exhibits periodicity as shown in \cref{fig:time_vs_riparian_delta}, \cref{fig:time_vs_invertebrates_delta}, \cref{fig:time_vs_agriculture_delta} and \cref{fig:rip_inv_agr_delta}. Although the lower numbers have stable eigenvalues, we see no periodicity as it converges. When we increase the values, they display unstable eigenvalues and no periodic behaviour in graphs.\\
-\end{description}
+%With these numerical parameters, it has been found that the system exhibits local as well as global asymptotic stable behavior around coexistence equilibrium $E_3$, satisfying its related mathematical conditions. 
+From the Figure~\ref{fig:rip-inv-agr} it is observed that for the parametric values given in \eqref{parameters}, the system ultimately converges to the co-existence equilibrium $E_3$. Behavioral changes in system dynamics with change in parametric values is analysed. To do so, one of the parameter is selected and varied, while keeping other parameters fixed. With this, the following observations have been made:
+%To demonstrate the behaviour of the model, we investigated each parametric value mentioned in Table \ref{Table 1}, while maintaining the others constant. We assumed that the starting values of $V$, $I$, and $A$ as $0.2, 0.3$, and $0.5$, respectively. The values investigated here all meet the Lyapunov stability requirement, and the remaining observations are as follows:
+\begin{itemize}
+%\item[$\bullet$] We experimented with three alternative values of the parameter $r$. We observed periodic activity in the graph at this point, and convergence occurs when we extend the time duration. However, at smaller values such as $0.009$, we can observe that the convergence is achieved without much periodicity, as seen in \cref{fig:time_vs_riparian_r}, \cref{fig:time_vs_invertebrates_r}, \cref{fig:time_vs_agriculture_r} and \cref{fig:rip_inv_agr_r}. Even though there is periodicity in the graph for larger values of $r$, such as $1.9$, the convergence occurs at a comparable rate to that of lesser values of $r$. The majority of complex eigenvalues are negative which exhibits stability.\\
+\item[$\bullet$] Figure~\ref{fig:time_vs_riparian_r}, Figure~\ref{fig:time_vs_invertebrates_r}, and Figure~\ref{fig:time_vs_agriculture_r} show the variation in values of system variables $V$, $I$ and $A$ with time $t$ respectively for different values of $r$. From the plot, it can be deduced that for smaller values of $r$ the periodicity decreases and the convergence occurs slower. From the time - series plots for $r = 1.9$ and $r=2.9$, it can be inferred that periodic fluctuations reduce and convergence to equilibrium values occur earlier as $r$ increases. It means that the system may directly converge to the equilibrium without any period fluctuations for larger values of $r$ and it is true in the case of all system variables. Therefore, for the stability of the system around co-existence equilibrium, intrinsic growth rate of riparian vegetation should be high.
+\item[$\bullet$] Figure~\ref{fig:time_vs_riparian_alpha}, Figure~\ref{fig:time_vs_invertebrates_alpha}, and Figure~\ref{fig:time_vs_agriculture_alpha} demonstrate the variations in value of system variables $V$, $I$ and $A$ with time $t$ for different values of parameter $\alpha$.
+From the figures, it can be noticed that for larger values of $\alpha$, system solutions exhibit lesser periodic fluctuations than the smaller values. The obtained variation also reveals that the excessive utilization of riparian vegetation for agricultural practices may result into destabilization of the system with collapse of riparian vegetation.    
+
+\item[$\bullet$] Figure~\ref{fig:time_vs_riparian_beta}, Figure~\ref{fig:time_vs_invertebrates_beta}, Figure~\ref{fig:time_vs_agriculture_beta} demonstrate the variations in value of system variables $V$, $I$ and $A$ with time $t$ for different values of parameter $\beta$. The figures show that periodic fluctuations diminish as the value of $\beta$ decreases. Convergence happens significantly more slowly as $\beta$ values grow. Excessive reduction in the value of $\beta$ will result in the system collapsing. As a result, we may conclude that if the riparian vegetation is underutilised, the system will collapse, resulting in the lack of terrestrial invertebrates in that riparian zone.
+
+\item[$\bullet$] Figure~\ref{fig:time_vs_riparian_gamma}, Figure~\ref{fig:time_vs_invertebrates_gamma}, Figure~\ref{fig:time_vs_agriculture_gamma} demonstrate the variations in value of system variables $V$, $I$ and $A$ with time $t$ for different values of parameter $\gamma$. In this case we can see that convergence occurs faster with increase in values of $\gamma$. Periodic fluctuations increase with lowering the $\gamma$ values. 
+
+\item[$\bullet$] Figure~\ref{fig:time_vs_riparian_delta}, Figure~\ref{fig:time_vs_invertebrates_delta}, Figure~\ref{fig:time_vs_agriculture_delta} demonstrate the variations in value of system variables $V$, $I$ and $A$ with time $t$ for different values of parameter $\delta$. When the values of $delta$ are greater, convergence occurs more quicker and with fewer periodic variations. We may deduce from the graph that the depletion rate due to agricultural production should be lower in order to sustain a healthy terrestrial invertebrate population.
+\end{itemize}
+
 \section{Differential Sensitivity Analysis}
 The values obtained from the model simulation provide just a general notion of the parameters of \autoref{Table 1}; nonetheless, it is necessary to compile a list of key parameters that may have a significant impact on the dynamics of the model system. To accomplish this, the sensitivity analysis of the model \eqref{sec2:e2} is performed for all parameters. as studied by Bortz and Nelson \cite{bortz2004}. We have ignored the sensitivity analysis of parameter $\theta$ as it is dependent upon the parameter $\beta$.\\
 By adding the logarithmic sensitivity function $F_w(t,w)$, the logarithmic sensitivity solutions with regard to the parameters are assessed as:
@@ -500,11 +512,11 @@ where parameter is $w$ and $F$ is the dynamical variable. Logarithmic sensitivit
 \begin{equation}\label{sec5:e2}
 \xi^w_F=w\frac{F_w}{F}
 \end{equation}
-These solutions represent a percentage change in solution equal to twice the parameter value. In our case, the sensitivity solutions for each of the dynamic variables against each parameter were recorded after a 10-year period. The obtained solutions corresponding to equilibrium values when the global stability requirement of dynamical variables $V$, $I$, and $A$ is satisfied are illustrated in \cref{fig:sensitivity}, and the conclusions are provided below.
+These solutions represent a percentage change in solution equal to twice the parameter value. In our case, the sensitivity solutions for each of the dynamic variables against each parameter were recorded after a 10-year period. The obtained solutions corresponding to equilibrium values when the global stability requirement of dynamical variables $V$, $I$, and $A$ is satisfied are illustrated in Figure~\ref{fig:sensitivity}, and the conclusions are provided below.
 \begin{enumerate}[a)]
-\item In case of riparian vegetation that is for dynamic variable $V$, we may deduce from the \cref{fig:V_sen} that for parameters $r$ and $\gamma$ the riparian vegetation is favourable impacted and adversely influenced for $\alpha$, $\beta$ and $\delta$.
-\item Similarly in case of terrestrial invertebrates that is $I$, we can conclude from the \cref{fig:I_sen} that $r$ and $\beta$ impact the invertebrates positively and negatively influenced by $\alpha$, $\gamma$ and $\delta$.
-\item Finally, in the instance of agricultural productivity variable $A$, we observe that in \cref{fig:A_sen}, $r$ and $\beta$ are favourably and negatively impacted by $\alpha$, $\gamma$, and $\delta$, which is similar to invertebrates.
+\item In case of riparian vegetation that is for dynamic variable $V$, we may deduce from the Figure \ref{fig:V_sen} that for parameters $r$ and $\gamma$ the riparian vegetation is favourable impacted and adversely influenced for $\alpha$, $\beta$ and $\delta$.
+\item Similarly in case of terrestrial invertebrates that is $I$, we can conclude from the Figure \ref{fig:I_sen} that $r$ and $\beta$ impact the invertebrates positively and negatively influenced by $\alpha$, $\gamma$ and $\delta$.
+\item Finally, in the instance of agricultural productivity variable $A$, we observe that in Figure \ref{fig:A_sen}, $r$ and $\beta$ are favourably and negatively impacted by $\alpha$, $\gamma$, and $\delta$, which is similar to invertebrates.
 \end{enumerate}
 \section{Conclusion}
  Agricultural productivity and riparian vegetation are both crucial components for people since they supply a variety of resources that humans require in order to exist. However, land-use near heavily sedimented regions is growing as a result of rising population and demand. Among many other anthropogenic disturbances, agricultural productivity is a source of worry for terrestrial invertebrates that live in such places. Forested riparian buffers promote more invertebrate diversity and more unique ecosystems in general \cite{popescu2021riparian}. Their habitat is completely reliant on riparian vegetation since it not only provides a source of food but also serves as a location for a variety of activities such as ambush hunting, that are essential to their existence.\\
@@ -513,34 +525,9 @@ The local stability around all equilibria has been studied. In terms of coexiste
 The proposed model is an attempt to describe significant dynamical characteristics of agricultural productions and terrestrial invertebrates in the presence of riparian vegetation that are important to know in order to maintain a balance between riparian vegetation and agricultural production while not overusing the land wiping off vegetation. Deforestation has a number of negative consequences, one of which is that it threatens the survival of terrestrial invertebrates that can enhance agricultural production. In this paper, different possible scenarios, that can exist in the interactive dynamics, are illustrated with hypothetical set of parameter values, due to unavailability of real time data. It may, however, be useful to ecologists for realistic temporal studies based on the numerous co-benefits of restoring and maintaining vegetated riparian buffers.
 %%%FIGURES
 \begin{figure}[bp!]
-	\centering
-	\begin{subfigure}[t]{0.45\textwidth}
-		\centering
-	\includegraphics[width=\textwidth]{time_vs_riparian_r.png}
-		\caption{Change in Riparian Vegetation with time} \label{fig:time_vs_riparian_r}
-	\end{subfigure}
-\hspace{0.08\textwidth}
-        \begin{subfigure}[t]{0.45\textwidth}
                  \centering
-         \includegraphics[width=\textwidth]{time_vs_invertebrates_r.png}
-		\caption{Change in Terrestrial Invertebrates with time} \label{fig:time_vs_invertebrates_r}
-	\end{subfigure}
-\vskip\baselineskip
-\begin{subfigure}[t]{0.45\textwidth}
-                 \centering
-         \includegraphics[width=\textwidth]{time_vs_agriculture_r.png}
-		\caption{Change in Terrestrial Invertebrates with time} \label{fig:time_vs_agriculture_r}
-	\end{subfigure}
-\quad
-\hspace{0.08\textwidth}
-\caption{Variation in parameter r}
-\end{figure}
-
-\FloatBarrier
-              \begin{figure}[bp!]
-                 \centering
-         \includegraphics[width=\textwidth]{rip_inv_agr_r.png}
-		\caption{Three dimensional change} \label{fig:rip_inv_agr_r}
+         \includegraphics[width=\textwidth]{phase-port-3D.png}
+		\caption{Phase Portrait in $V-I-A$ space} \label{fig:rip-inv-agr}
 	\end{figure}
 
 \FloatBarrier
@@ -548,128 +535,160 @@ The proposed model is an attempt to describe significant dynamical characteristi
 	\centering
 	\begin{subfigure}[t]{0.45\textwidth}
 		\centering
-	\includegraphics[width=\textwidth]{time_vs_riparian_alpha.png}
-		\caption{Change in Riparian Vegetation with time} \label{fig:time_vs_riparian_alpha}
+	\includegraphics[width=\textwidth]{r_time_versus_riparian.png}
+		\caption{Riparian vegetation $(V)$ vs Time $(t)$} \label{fig:time_vs_riparian_r}
 	\end{subfigure}
 \hspace{0.08\textwidth}
         \begin{subfigure}[t]{0.45\textwidth}
                  \centering
-         \includegraphics[width=\textwidth]{time_vs_invertebrates_alpha.png}
-		\caption{Change in Terrestrial Invertebrates with time} \label{fig:time_vs_invertebrates_alpha}
+         \includegraphics[width=\textwidth]{r_time_versus_vertebrates.png}
+		\caption{Terrestrial Invertebrates $(I)$ vs Time $(t)$} \label{fig:time_vs_invertebrates_r}
 	\end{subfigure}
 \vskip\baselineskip
 \begin{subfigure}[t]{0.45\textwidth}
                  \centering
-         \includegraphics[width=\textwidth]{time_vs_agriculture_alpha.png}
-		\caption{Change in Terrestrial Invertebrates with time} \label{fig:time_vs_agriculture_alpha}
+         \includegraphics[width=\textwidth]{r_time_versus_agriculture.png}
+		\caption{Agriculture $(A)$ vs Time $(t)$} \label{fig:time_vs_agriculture_r}
 	\end{subfigure}
 \quad
 \hspace{0.08\textwidth}
-\caption{Variation in parameter $\alpha$}
+\caption{Time - series graph for change in $r$}
 \end{figure}
 
-\FloatBarrier
-              \begin{figure}[bp!]
-                 \centering
-         \includegraphics[width=\textwidth]{rip_inv_agr_alpha.png}
-		\caption{Three dimensional change} \label{fig:rip_inv_agr_alpha}
-        \hspace{0.08\textwidth}
-              \end{figure}
+%\FloatBarrier
+              %\begin{figure}[bp!]
+                 %\centering
+         %\includegraphics[width=\textwidth]{rip_inv_agr_r.png}
+		%\caption{Three dimensional change} \label{fig:rip_inv_agr_r}
+	%\end{figure}
 
 \FloatBarrier
 \begin{figure}[bp!]
 	\centering
 	\begin{subfigure}[t]{0.45\textwidth}
 		\centering
-	\includegraphics[width=\textwidth]{time_vs_riparian_beta.png}
-		\caption{Change in Riparian Vegetation with time} \label{fig:time_vs_riparian_beta}
+	\includegraphics[width=\textwidth]{alpha_time_versus_riparian.png}
+		\caption{Riparian vegetation $(V)$ vs Time $(t)$} \label{fig:time_vs_riparian_alpha}
 	\end{subfigure}
 \hspace{0.08\textwidth}
         \begin{subfigure}[t]{0.45\textwidth}
                  \centering
-         \includegraphics[width=\textwidth]{time_vs_invertebrates_beta.png}
-		\caption{Change in Terrestrial Invertebrates with time} \label{fig:time_vs_invertebrates_beta}
+         \includegraphics[width=\textwidth]{alpha_time_versus_vertebrates.png}
+		\caption{Terrestrial Invertebrates $(I)$ vs Time $(t)$} \label{fig:time_vs_invertebrates_alpha}
 	\end{subfigure}
 \vskip\baselineskip
 \begin{subfigure}[t]{0.45\textwidth}
                  \centering
-         \includegraphics[width=\textwidth]{time_vs_agriculture_beta.png}
-		\caption{Change in Terrestrial Invertebrates with time} \label{fig:time_vs_agriculture_beta}
+         \includegraphics[width=\textwidth]{alpha_time_versus_agriculture.png}
+		\caption{Agriculture $(A)$ vs Time $(t)$} \label{fig:time_vs_agriculture_alpha}
 	\end{subfigure}
 \quad
 \hspace{0.08\textwidth}
-\caption{Variation in parameter $\beta$}
+\caption{Time - series graph for change in $\alpha$}
 \end{figure}
 
-              \begin{figure}[bp!]
-                 \centering
-         \includegraphics[width=\textwidth]{rip_inv_agr_beta.png}
-		\caption{Three dimensional change} \label{fig:rip_inv_agr_beta}
-	\end{figure}
+%\FloatBarrier
+              %\begin{figure}[bp!]
+                 %\centering
+         %\includegraphics[width=\textwidth]{rip_inv_agr_alpha.png}
+		%\caption{Three dimensional change} \label{fig:rip_inv_agr_alpha}
+        %\hspace{0.08\textwidth}
+              %\end{figure}
 
 \FloatBarrier
 \begin{figure}[bp!]
 	\centering
 	\begin{subfigure}[t]{0.45\textwidth}
 		\centering
-	\includegraphics[width=\textwidth]{time_vs_riparian_gamma.png}
-		\caption{Change in Riparian Vegetation with time} \label{fig:time_vs_riparian_gamma}
+	\includegraphics[width=\textwidth]{beta_time_vs_riparian.png}
+		\caption{Riparian vegetation $(V)$ vs Time $(t)$} \label{fig:time_vs_riparian_beta}
 	\end{subfigure}
 \hspace{0.08\textwidth}
         \begin{subfigure}[t]{0.45\textwidth}
                  \centering
-         \includegraphics[width=\textwidth]{time_vs_invertebrates_gamma.png}
-		\caption{Change in Terrestrial Invertebrates with time} \label{fig:time_vs_invertebrates_gamma}
+         \includegraphics[width=\textwidth]{beta_time_vs_invertebrates.png}
+		\caption{Terrestrial Invertebrates $(I)$ vs Time $(t)$} \label{fig:time_vs_invertebrates_beta}
 	\end{subfigure}
 \vskip\baselineskip
 \begin{subfigure}[t]{0.45\textwidth}
                  \centering
-         \includegraphics[width=\textwidth]{time_vs_agriculture_gamma.png}
-		\caption{Change in Terrestrial Invertebrates with time} \label{fig:time_vs_agriculture_gamma}
+         \includegraphics[width=\textwidth]{beta_time_vs_agriculture.png}
+		\caption{Agriculture $(A)$ vs Time $(t)$} \label{fig:time_vs_agriculture_beta}
 	\end{subfigure}
 \quad
 \hspace{0.08\textwidth}
-\caption{Variation in parameter $\gamma$}
+\caption{Time - series graph for change in $\beta$}
 \end{figure}
-\FloatBarrier
 
-              \begin{figure}[bp!]
-                 \centering
-         \includegraphics[width=\textwidth]{rip_inv_agr_gamma.png}
-		\caption{Three dimensional change} \label{fig:rip_inv_agr_gamma}
-	\end{figure}
+              %\begin{figure}[bp!]
+                 %\centering
+         %\includegraphics[width=\textwidth]{rip_inv_agr_beta.png}
+		%\caption{Three dimensional change} \label{fig:rip_inv_agr_beta}
+	%\end{figure}
 
 \FloatBarrier
 \begin{figure}[bp!]
 	\centering
 	\begin{subfigure}[t]{0.45\textwidth}
 		\centering
-	\includegraphics[width=\textwidth]{time_vs_riparian_delta.png}
-		\caption{Change in Riparian Vegetation with time} \label{fig:time_vs_riparian_delta}
+	\includegraphics[width=\textwidth]{gamma_time_vs_riparian.png}
+		\caption{Riparian vegetation $(V)$ vs Time $(t)$} \label{fig:time_vs_riparian_gamma}
 	\end{subfigure}
 \hspace{0.08\textwidth}
         \begin{subfigure}[t]{0.45\textwidth}
                  \centering
-         \includegraphics[width=\textwidth]{time_vs_invertebrates_delta.png}
-		\caption{Change in Terrestrial Invertebrates with time} \label{fig:time_vs_invertebrates_delta}
+         \includegraphics[width=\textwidth]{gamma_time_vs_invertebrates.png}
+		\caption{Terrestrial Invertebrates $(I)$ vs Time $(t)$} \label{fig:time_vs_invertebrates_gamma}
 	\end{subfigure}
 \vskip\baselineskip
 \begin{subfigure}[t]{0.45\textwidth}
                  \centering
-         \includegraphics[width=\textwidth]{time_vs_agriculture_delta.png}
-		\caption{Change in Terrestrial Invertebrates with time} \label{fig:time_vs_agriculture_delta}
+         \includegraphics[width=\textwidth]{gamma_time_vs_agriculture.png}
+		\caption{Agriculture $(A)$ vs Time $(t)$} \label{fig:time_vs_agriculture_gamma}
 	\end{subfigure}
 \quad
 \hspace{0.08\textwidth}
-\caption{Variation in parameter $\delta$}
+\caption{Time - series graph for change in $\gamma$}
 \end{figure}
+%\FloatBarrier
+
+              %\begin{figure}[bp!]
+                 %\centering
+         %\includegraphics[width=\textwidth]{rip_inv_agr_gamma.png}
+		%\caption{Three dimensional change} \label{fig:rip_inv_agr_gamma}
+	%\end{figure}
 
 \FloatBarrier
-              \begin{figure}[bp!]
+\begin{figure}[bp!]
+	\centering
+	\begin{subfigure}[t]{0.45\textwidth}
+		\centering
+	\includegraphics[width=\textwidth]{delta_time_vs_riparian.png}
+		\caption{Riparian vegetation $(V)$ vs Time $(t)$} \label{fig:time_vs_riparian_delta}
+	\end{subfigure}
+\hspace{0.08\textwidth}
+        \begin{subfigure}[t]{0.45\textwidth}
                  \centering
-         \includegraphics[width=\textwidth]{rip_inv_agr_delta.png}
-		\caption{Three dimensional change} \label{fig:rip_inv_agr_delta}
-	\end{figure}
+         \includegraphics[width=\textwidth]{delta_time_vs_invertebrates.png}
+		\caption{Terrestrial Invertebrates $(I)$ vs Time $(t)$} \label{fig:time_vs_invertebrates_delta}
+	\end{subfigure}
+\vskip\baselineskip
+\begin{subfigure}[t]{0.45\textwidth}
+                 \centering
+         \includegraphics[width=\textwidth]{delta_time_vs_agriculture.png}
+		\caption{Agriculture $(A)$ vs Time $(t)$} \label{fig:time_vs_agriculture_delta}
+	\end{subfigure}
+\quad
+\hspace{0.08\textwidth}
+\caption{Time - series graph for change in $\delta$}
+\end{figure}
+
+%\FloatBarrier
+              %\begin{figure}[bp!]
+                 %\centering
+         %\includegraphics[width=\textwidth]{rip_inv_agr_delta.png}
+		%\caption{Three dimensional change} \label{fig:rip_inv_agr_delta}
+	%\end{figure}
 \FloatBarrier
 \begin{figure}[bp!]
 	\centering
