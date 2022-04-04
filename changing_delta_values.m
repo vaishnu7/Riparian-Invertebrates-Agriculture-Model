@@ -5,10 +5,9 @@ format long
 %parameter values that will not vary
 s=1; K=1; nu=1; L=1;
 %PARAMETERS WITH PERIODIC OSCILLATIONS
-% delta=.003; %best graph
-% delta=.03;
+% delta=.0008;
+% delta=.003;
 delta=.3;
-% delta=1.3;
 
 r=0.9; alpha=.005; beta=1.5;
 theta=.9; gamma=.0005;
@@ -30,7 +29,10 @@ V2_cap = (-b_cap-sqrt(D_cap))/(2*a_cap)
 V_cap_act = V1_cap
 I_cap_act = (theta*beta*V_cap_act - delta*L) / (gamma + (delta*L*nu/s))
 A_cap_act = (s + nu*I_cap_act)*(L/s)
-if delta<2*theta*beta && alpha<theta*beta^2
+% if delta<2*theta*beta && alpha<theta*beta^2
+%     disp("existence of interior equilibrium satisfied")
+% end
+if beta > (delta/theta)*(1+alpha/r)
     disp("existence of interior equilibrium satisfied")
 end
 % if (theta*beta*V_cap_act > delta*L)
@@ -94,35 +96,35 @@ figure(1)
 plot(t,x(:,1),'b')
 xlabel('time') 
 ylabel('riparian vegetation')
-label1 = '$\delta=0.003$';
-label2 = '$\delta=0.3$';
-legend(label1,label2,'Interpreter','latex')
+% label1 = '$\delta=0.003$';
+% label2 = '$\delta=0.3$';
+% legend(label1,label2,'Interpreter','latex')
 hold on
 figure(2)
 plot(t,x(:,2),'b')
 xlabel('time') 
 ylabel('terrestrial invertebrates')
-label1 = '$\delta=0.003$';
-label2 = '$\delta=0.3$';
-legend(label1,label2,'Interpreter','latex')
+% label1 = '$\delta=0.003$';
+% label2 = '$\delta=0.3$';
+% legend(label1,label2,'Interpreter','latex')
 hold on
 figure(3)
 plot(t,x(:,3),'b')
 xlabel('time') 
 ylabel('agriculture')
-label1 = '$\delta=0.003$';
-label2 = '$\delta=0.3$';
-legend(label1,label2,'Interpreter','latex')
+% label1 = '$\delta=0.003$';
+% label2 = '$\delta=0.3$';
+% legend(label1,label2,'Interpreter','latex')
 hold on
-figure(4)
-plot3(x(:,1),x(:,2),x(:,3),'b')
-xlabel('riparian vegetation') 
-ylabel('terrestrial invertebrates')
-zlabel('agriculture')
-label1 = '$\delta=0.003$';
-label2 = '$\delta=0.3$';
-legend(label1,label2,'Interpreter','latex')
-hold on
+% figure(4)
+% plot3(x(:,1),x(:,2),x(:,3),'b')
+% xlabel('riparian vegetation') 
+% ylabel('terrestrial invertebrates')
+% zlabel('agriculture')
+% label1 = '$\delta=0.003$';
+% label2 = '$\delta=0.3$';
+% legend(label1,label2,'Interpreter','latex')
+% hold on
 % figure(5)
 % plot(x(:,2),x(:,1),'k')
 % xlabel('terrestrial invertebrates') 
