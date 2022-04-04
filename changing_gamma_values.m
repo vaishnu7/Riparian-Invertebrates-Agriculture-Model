@@ -5,11 +5,10 @@ format long
 %%parameter values that will not vary
 s=1; K=1; nu=1; L=1;
 %%PARAMETERS WITH PERIODIC OSCILLATIONS
+% gamma=.00005;
 % gamma=.0005;
-% gamma=.005; %best graph
-gamma=60.05;
-% gamma=.5;
-
+gamma=.05;
+% gamma=60.05;
 r=0.9; alpha=.005; beta=1.5;
 theta=.9; delta=.003;
 % % %PARAMETERS WITH ALL CONDITIONS OF GLOBAL STABILITY
@@ -23,7 +22,7 @@ p_riparian=size(x);
 V_cap_rev=x(p_riparian(1),1)
 I_cap_rev=x(p_riparian(1),2)
 A_cap_rev=x(p_riparian(1),3)
-% %Equilibrium Existence
+% Equilibrium Existence
 a_cap = (alpha*L*nu*theta*beta)/(s*(gamma+(delta*L*nu)/s))
 b_cap = (r/K) + alpha*L -(alpha*(L^2)*nu*delta/(s*(gamma + (delta*L*nu/s)))) + (theta*(beta^2)/(gamma + (delta*L*nu/s)))
 c_cap = -r - (delta*beta*L/(gamma + (delta*L*nu/s)))
@@ -33,13 +32,16 @@ V2_cap = (-b_cap-sqrt(D_cap))/(2*a_cap)
 V_cap_act = V1_cap
 I_cap_act = (theta*beta*V_cap_act - delta*L) / (gamma + (delta*L*nu/s))
 A_cap_act = (s + nu*I_cap_act)*(L/s)
-if delta<2*theta*beta && alpha<theta*beta^2
+% if delta<2*theta*beta && alpha<theta*beta^2
+%     disp("existence of interior equilibrium satisfied")
+% end
+if beta > (delta/theta)*(1+alpha/r)
     disp("existence of interior equilibrium satisfied")
 end
 % if (theta*beta*V_cap_act > delta*L)
 %     disp("existence of interior equilibrium satisfied")
 % end
-% %%dimensionless b1,b2,b3
+% dimensionless b1,b2,b3
 % b1_dim = alpha*V_cap_act*A_cap_act + gamma*I_cap_act + A_cap_act + r*V_cap_act;
 % b2_dim = r*V_cap_act*gamma*I_cap_act + r*V_cap_act*A_cap_act + alpha*V_cap_act*(A_cap_act^2) + (alpha*V_cap_act*A_cap_act*gamma*I_cap_act) + gamma*I_cap_act*A_cap_act + delta*I_cap_act*nu*A_cap_act + theta*V_cap_act*I_cap_act;
 % b3_dim = r*V_cap_act*gamma*I_cap_act*A_cap_act + r*V_cap_act*delta*I_cap_act*nu*A_cap_act + alpha*V_cap_act*gamma*I_cap_act*(A_cap_act^2) + alpha*V_cap_act*delta*I_cap_act*nu*A_cap_act^2 + theta*I_cap_act*A_cap_act*V_cap_act + alpha*V_cap_act^2*theta*I_cap_act*nu*A_cap_act;
@@ -97,35 +99,35 @@ figure(1)
 plot(t,x(:,1),'k')
 xlabel('time') 
 ylabel('riparian vegetation')
-label1 = '$\gamma=0.0005$';
-label2 = '$\gamma=0.05$';
-legend(label1,label2,'Interpreter','latex')
+% label1 = '$\gamma=0.0005$';
+% label2 = '$\gamma=0.05$';
+% legend(label1,label2,'Interpreter','latex')
 hold on
 figure(2)
 plot(t,x(:,2),'k')
 xlabel('time') 
 ylabel('terrestrial invertebrates')
-label1 = '$\gamma=0.0005$';
-label2 = '$\gamma=0.05$';
-legend(label1,label2,'Interpreter','latex')
+% label1 = '$\gamma=0.0005$';
+% label2 = '$\gamma=0.05$';
+% legend(label1,label2,'Interpreter','latex')
 hold on
 figure(3)
 plot(t,x(:,3),'k')
 xlabel('time') 
 ylabel('agriculture')
-label1 = '$\gamma=0.0005$';
-label2 = '$\gamma=0.05$';
-legend(label1,label2,'Interpreter','latex')
+% label1 = '$\gamma=0.0005$';
+% label2 = '$\gamma=0.05$';
+% legend(label1,label2,'Interpreter','latex')
 hold on
-figure(4)
-plot3(x(:,1),x(:,2),x(:,3),'k')
-xlabel('riparian vegetation') 
-ylabel('terrestrial invertebrates')
-zlabel('agriculture')
-label1 = '$\gamma=0.0005$';
-label2 = '$\gamma=0.05$';
-legend(label1,label2,'Interpreter','latex')
-hold on
+% figure(4)
+% plot3(x(:,1),x(:,2),x(:,3),'k')
+% xlabel('riparian vegetation') 
+% ylabel('terrestrial invertebrates')
+% zlabel('agriculture')
+% label1 = '$\gamma=0.0005$';
+% label2 = '$\gamma=0.05$';
+% legend(label1,label2,'Interpreter','latex')
+% hold on
 % figure(5)
 % plot(x(:,2),x(:,1),'k')
 % xlabel('terrestrial invertebrates') 
