@@ -1,2 +1,2 @@
-# Riparian Invertebrates Agriculture Interactive Model
+# Riparian Invertebrates Agriculture Interactive Population Dynamic Model
 
